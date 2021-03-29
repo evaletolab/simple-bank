@@ -1,0 +1,68 @@
+  .home{
+    background-color: #efefef;
+    padding-top: 80px;
+    height: calc(100vh - 80px);
+    .toolbar{
+      transform: translateY(0);
+      transition: all 200ms;      
+      top:-70px;
+      background-color: white;
+      height: 69px;
+      -box-shadow: 0 2px 3px -1px rgba(0,0,0,.1);
+      &.exited {
+        transform: translateY(69px);            
+      }
+
+      .toolbar-title{
+        img.logo{
+          width: 60px;
+          transform: translateY(-25px);
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+
+  .user {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    svg {
+      width: 30%;
+      color: var(--theme-1-primary);            
+    }
+    h2{
+      text-transform: uppercase;
+    }
+  }
+  .document{
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    width: calc( 100% - 30px);    
+    input[type="text"]{
+      padding: 10px;
+      font-size: 15px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ddd;      
+    }
+    select {
+      border-radius: 5px;
+      width: 100px;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ddd;
+      background: #fff;      
+    }
+  }
+
+  .editor{
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    width: calc( 100% - 30px);
+    text-align: left;
+  }

@@ -1,0 +1,229 @@
+/* * * * suisse * * * * */
+
+@font-face {
+  font-family: "suisse";
+  src: url("/fonts/suisse.woff/SuisseEDUIntl-Regular-WebS.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "suisse";
+  src: url("/fonts/suisse.woff/SuisseEDUIntl-RegularItalic-WebS.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "suisse";
+  src: url("/fonts/suisse.woff/SuisseEDUIntl-Bold-WebS.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "suisse";
+  src: url("/fonts/suisse.woff/SuisseEDUIntl-BoldItalic-WebS.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+  html {
+    -webkit-overflow-scrolling: touch;
+    overflow: scrolls;
+  }
+  body{
+      margin: 0;
+      -background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  button{
+    padding: 8px;
+  }
+  
+  .hide    {display: none!important;}
+
+  .show-sm     {display: none!important;}
+
+  @media only screen and (max-width: 767px) {
+    .hide-sm    {display: none!important;}
+    .show-sm     {display: block!important;}
+    .inline-show-sm     {display: inline-block!important;}
+  }
+  
+  @media only screen and (max-width: 1023px) {
+    .hide-md    {display: none;}
+  }
+  @media only screen and (min-width: 1024px) {
+    .show-lg    {display: block;}
+    .hide-lg    {display: none;}
+  }
+
+  .theme-1 {
+    .primary-on-text { color: var(--theme-1-primary)!important;}
+    .secondary-on-text { color: var(--theme-1-secondary)!important;}
+    .tertiary-on-text { color: var(--theme-1-tertiary)!important; }
+
+    .primary { background-color: var(--theme-1-primary)!important; color: white!important }
+    .secondary { background-color: var(--theme-1-secondary)!important; color: white!important; }
+    .tertiary { background-color: var(--theme-1-tertiary)!important; }
+  }
+
+  .theme-2 {
+    .primary { background-color: var(--theme-2-primary)!important;color: white!important; }
+    .secondary { background-color: var(--theme-2-secondary)!important;color: white!important; }
+    .tertiary { background-color: var(--theme-2-tertiary)!important; }
+
+    .primary-on-text { color: var(--theme-2-primary)!important;}
+    .secondary-on-text { color: var(--theme-2-secondary)!important;}
+    .tertiary-on-text { color: var(--theme-2-tertiary)!important; }
+  }
+
+  .theme-3 {
+    .primary { background-color: var(--theme-3-primary)!important;color: white!important; }
+    .secondary { background-color: var(--theme-3-secondary)!important;color: white!important; }
+    .tertiary { background-color: var(--theme-3-tertiary)!important; }
+
+    .primary-on-text { color: var(--theme-3-primary)!important;}
+    .secondary-on-text { color: var(--theme-3-secondary)!important;}
+    .tertiary-on-text { color: var(--theme-3-tertiary)!important; }  
+  }
+
+  .theme-4 {
+    .primary { background-color: var(--theme-4-primary)!important;color: white!important; }
+    .secondary { background-color: var(--theme-4-secondary)!important;color: white!important; }
+    .tertiary { background-color: var(--theme-4-tertiary)!important; }
+
+    .primary-on-text { color: var(--theme-4-primary)!important;}
+    .secondary-on-text { color: var(--theme-4-secondary)!important;}
+    .tertiary-on-text { color: var(--theme-4-tertiary)!important; }
+  }
+
+.hidden {
+  visibility: hidden;
+}
+
+.disable-transitions {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+
+.infographic-overlay{
+  opacity:0;
+  transition: opacity 0.4s linear;
+  -moz-transition: opacity 0.4s linear;
+  -webkit-transition: opacity 0.4s linear;
+  pointer-events: none;
+}
+
+.infographic-overlay-visible{
+  opacity:1;
+  pointer-events: auto;
+}
+
+
+.toolbar {
+  border-radius: 0 0 18px 18px;
+  flex-flow: row wrap;
+  position: relative;
+  z-index: 2;    
+  position: fixed;
+  width: 100vw;
+  .toolbar-section-start,
+  .toolbar-section-end
+  {
+    display: flex;
+    align-items: center;
+    flex: 1;    
+  }
+
+  .toolbar-section-end {
+    justify-content: flex-end;
+    order: 10;    
+  }
+
+  .toolbar-section-start {
+    justify-content: flex-start;
+    order: 0;    
+  }
+
+  .toolbar-title{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    &.tight {
+      margin: 0;
+    }
+    &.title-left{
+      text-align: left;
+    }
+    .progress{
+      width: 90px;
+      height: 25px;
+      margin: auto;        
+    }
+  }
+
+  .toolbar-row {
+    width: 100%;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  button{
+    padding: 2px 2px;
+    width: 36px;
+    height: 36px;        
+    background-color: transparent;
+    border: none;
+    svg{
+      width: 34px;
+    }
+
+    &.end{
+      margin-right: 10px;
+      margin-top: 15px;
+    }
+    &.start{
+      margin-left: 10px;
+      margin-top: 15px;
+    }
+  }
+
+}
+
+.toolbar-row + .toolbar-row {
+  margin-top: -12px;
+}
+
+
+.img-fullwidth{
+  width: 100vw;
+  margin-left: -25px;
+  margin-right: -25px;      
+}
+
+  
+
+  // Info
+  // https://css-tricks.com/practical-css-scroll-snapping/
+
+

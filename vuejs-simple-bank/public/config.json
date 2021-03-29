@@ -1,0 +1,28 @@
+{
+  "version" : "v0.2.0",
+  "icons":{
+    "VIDEO": "video",
+    "PODCAST": "podcast",
+    "INFOGRAPHIC": "infographie",
+    "MARKDOWN": "cours"
+  },
+  "themes": {
+    "1": { "primary":"#6900FF","secondary":"#260063", "tertiary":"#BBB8FF"},
+    "2": { "primary":"#FFBC00","secondary":"#FF8D00", "tertiary":"#FFF9C5"},
+    "3": { "primary":"#00D6B2","secondary":"#00A585", "tertiary":"#D9FFF8"},
+    "4": { "primary":"#FF0049","secondary":"#A5003F", "tertiary":"#FF85A2"}
+  },
+  "airtable": {
+    "key" : "--",
+    "base" : "appdgQusWVGxQVipj"
+  },
+  "i18n":{
+    "fr":{
+      "landing_title1":"Bienvenue!"
+    },
+    "de":{
+      "landing_title1":"Bienvenue!"
+    }
+  }
+
+}
