@@ -34,12 +34,23 @@ task("balance", "Prints an account's balance")
     hardhat:{
       forking:{
         url:"https://eth-ropsten.alchemyapi.io/v2/e-8uQkOovJBEuOYF4DTXJ338fcQOfLrT"
+      },
+      chainId: 1337,
+      inject: false, // optional. If true, it will EXPOSE your mnemonic in your frontend code. Then it would be available as an "in-page browser wallet" / signer which can sign without confirmation.
+      accounts: {
+        mnemonic: "test test test test test test test test test test test junk", // test test test test test test test test test test test junk
       }
     }
   }
 
  */ 
 module.exports = {
-  solidity: "0.7.3"
+  solidity: "0.7.3",
+  hardhat: {
+    inject: false, // optional. If true, it will EXPOSE your mnemonic in your frontend code. Then it would be available as an "in-page browser wallet" / signer which can sign without confirmation.
+    accounts: {
+      mnemonic: "test test test test test test test test test test test junk", // test test test test test test test test test test test junk
+    }
+  } 
 };
 

@@ -1,28 +1,6 @@
 <template>
   <div id="app">
-
-    <section>
-        <b-tabs v-model="activeTab">
-            <b-tab-item label="Deposit">
-              <SimpleBank />
-            </b-tab-item>
-
-            <b-tab-item label="Music">
-                Lorem <br>
-                ipsum <br>
-                dolor <br>
-                sit <br>
-                amet.
-            </b-tab-item>
-
-            <b-tab-item label="Videos" disabled>
-                Nunc nec velit nec libero vestibulum eleifend.
-                Curabitur pulvinar congue luctus.
-                Nullam hendrerit iaculis augue vitae ornare.
-                Maecenas vehicula pulvinar tellus, id sodales felis lobortis eget.
-            </b-tab-item>
-        </b-tabs>
-    </section>    
+    <SimpleBank />
     <router-view/>
   </div>
 </template>
