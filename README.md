@@ -3,6 +3,16 @@
 `mkdir my-eth-project && cd my-eth-project`
 `npm install --save-dev hardhat`
 
+## git
+  git clone https://github.com/evaletolab/simple-bank
+  cd simple-bank
+  npm i
+
+## Metamaks
+* install Metamsk extension
+* create account based on mnemonic: "test test test test test test test test test test test junk"
+* use localhost:8545 network with chainId **31337**
+
 ### create project
 
 `npx hardhat`
@@ -13,11 +23,6 @@
 ## Deploy
 
 `npx hardhat run --network localhost scripts/deploy.js`
-
-## Metamaks
-* install Metamsk extension
-* create account based on mnemonic: "test test test test test test test test test test test junk"
-* use localhost:8545 network with chainId **31337**
 
 
 ## Tutorial
