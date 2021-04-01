@@ -20,11 +20,16 @@ async function main() {
   const token = await Token.deploy();
 
   await token.deployed();
+  const provider = hre.ethers.getDefaultProvider();
+
+
+  const TokenArtifact = hre.artifacts.readArtifactSync("Token");
 
   console.log("Token deployed to:", token.address);
   console.log("Token save ABI:");
+
   const tABI = {
-    abi : TokenABI.abi,
+    abi : TokenArtifact.abi,
     address : token.address
   };
   fs.writeFileSync("./vuejs-simple-bank/abis/Token.json", JSON.stringify(tABI,0, 2),{encoding:'utf8',flag:'w'});
@@ -34,6 +39,7 @@ async function main() {
   const DecentralizedBank = await hre.ethers.getContractFactory("dBank");
   const dbank = await DecentralizedBank.deploy(token.address);
   await dbank.deployed();
+  const dBankArtifact = hre.artifacts.readArtifactSync("dBank");
 
 
   console.log("DecentralizedBank deployed to:", dbank.address);
@@ -44,7 +50,7 @@ async function main() {
   console.log("DecentralizedBank get minted role");
   console.log("DecentralizedBank save ABI:");
   const dABI = {
-    abi : dBankABI.abi,
+    abi : dBankArtifact.abi,
     address : dbank.address
   };
   fs.writeFileSync("./vuejs-simple-bank/abis/dBank.json", JSON.stringify(dABI,0, 2),{encoding:'utf8',flag:'w'});
