@@ -7,11 +7,12 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 
 1. Pour chaque achat de token 100% CHF, l'utilisateur doit payer 80 CHF.
 2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% est prélevée. 
-3. Des investisseurs (que l'on nomme compte épargne) placent de l'argent à la banque 
-4. Cet argent est bloqué pour au minimum N mois
-5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% est garanti 
-6. la valeur précise du % est un calcul sur le montant total collecté par la somme des transactions
-7. l'intérêt est annuel, mais son actualisation est à la seconde
+3. Des investisseurs placent de l'argent à la banque sur un compte épargne.
+4. Cet argent est bloqué pour au minimum N mois.
+5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% devrait être obtenu.
+6. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions.
+7. L'intérêt est annuel, mais son actualisation est à la seconde.
+8. Les paramêtres de la banque sont définis par un vote.
 
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
