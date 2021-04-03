@@ -1,4 +1,4 @@
-# Une expérience pour la création d'une banque 
+# Une expérience de création d'une banque 100% numérique
 
 Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1)régulation bancaire obligatoire**, **(2)un jeux à [somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
 
@@ -9,7 +9,7 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
 2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
-3. Des investisseurs placent de l'argent à la banque sur un compte épargne.
+3. Des investisseurs placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/))  à la banque sur un compte épargne.
 4. Cet argent est bloqué pour au minimum N mois.
 5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% devrait être obtenu.
 6. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions.
@@ -23,7 +23,7 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
   * il faut 77 mouvements de 100 chf pour rembourser complètement la dette.
   * il faut 87 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
 3. La durée de vie d'une unité de 100 chf, c'est le nombre de [transactions nécessaires](https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+77) pour produire un minimum de 3% d'intérêt sur 12 mois (~87).
-3. On peut déterminer un taux d'intérêt sur le compte épargne en fonction de la vélocité de l'argent (calculée sur 12 mois). Il faut une vélocité minimum pour garantir un taux est au minimum de 3%.
+4. On peut déterminer un taux d'intérêt sur le compte épargne en fonction de la vélocité de l'argent (calculée sur 12 mois). Cependant, il faut une vélocité qu'une liquidité minimum pour garantir un taux minimum de incitatif pour l'épargnant.
 
 ![image](https://user-images.githubusercontent.com/1422935/113487142-96ce6700-94b6-11eb-8888-e97d6ee217b1.png)
 
@@ -37,7 +37,10 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 
 ![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
 
-## Prepare
+## Limitations
+Cette banque est seulement une expérience intellectuelle et technologique. Son contexte se limite a l'aspect éducatif.
+
+# Prepare
 `mkdir my-eth-project && cd my-eth-project`
 `npm install --save-dev hardhat`
 
