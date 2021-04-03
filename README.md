@@ -14,10 +14,10 @@ Voici une idée simple pour créer une banque sans license bancaire et qui méla
 
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
-2. Chaque unité de 100 chf, 
-  * il faut 333 mouvements pour être consommé complètement par les 0.3%.
-  * il faut 66 mouvements pour rembourser complètement la dette.
-  * il faut 76 mouvements pour rembourser et produire 3% sur le compte épargne.
+2. Pour l'unité de 100 chf, 
+  * il faut 333 mouvements de 100 chf pour être consommé complètement par les 0.3%.
+  * il faut 66 mouvements de 100 chf pour rembourser complètement la dette.
+  * il faut 76 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
 3. On peut déterminer un taux d'intérêt sur le compte épargne, en fonctione de la vitesse de déplacement de l'argent sur 12 mois Au dessus de 76 mouvement par unité, le taux est supérieur à 3%.
 
 > Note: la formule utilisée pour le calcule de vie d'une unité de 100 chf, est celle de l'intérêt composé 
