@@ -1,6 +1,6 @@
 # Nom-De-Bank
 
-Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1)régulation bancaire obligatoire**, **(2)[jeux à somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) pseudo anonyme**, **(5) 100% auditable**
+Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1)régulation bancaire obligatoire**, **(2)[un jeux à somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) pseudo anonyme**, **(5) 100% auditable**
 
 ## L'idée
 
@@ -14,7 +14,7 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% devrait être obtenu.
 6. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions.
 7. L'intérêt est annuel, mais son actualisation est à la seconde.
-8. Les paramêtres de la banque sont définis par un vote.
+8. Les paramêtres de la banque (vélocité, taux d'intérêt, dette, etc.) sont définis par le vote.
 
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
