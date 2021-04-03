@@ -8,7 +8,7 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 
 
 1. Pour chaque achat de token 100% CHF, l'utilisateur doit payer 80 CHF.
-2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% est prélevée. 
+2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% et 3 centimes est prélevée. 
 3. Des investisseurs placent de l'argent à la banque sur un compte épargne.
 4. Cet argent est bloqué pour au minimum N mois.
 5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% devrait être obtenu.
@@ -19,11 +19,11 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
 2. Pour une unité de 100 chf, 
-  * il faut 333 mouvements de 100 chf pour être consommé complètement par les 0.3%.
-  * il faut 66 mouvements de 100 chf pour rembourser complètement la dette.
-  * il faut 76 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
-3. La durée de vie d'une unité de 100 chf, c'est le nombre de [transactions nécessaires](https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+77) pour produire un minimum de 3% d'intérêt sur 12 mois (~85).
-3. On peut déterminer un taux d'intérêt sur le compte épargne, en fonction de la vélocité de l'argent (calculée sur 12 mois). Il y a un seuil de X mouvements qui détermine un taux est au minimum de 3%.
+  * il faut 550 mouvements de 100 chf pour être consommé complètement par les 0.3% + 3 centimes.
+  * il faut 77 mouvements de 100 chf pour rembourser complètement la dette.
+  * il faut 87 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
+3. La durée de vie d'une unité de 100 chf, c'est le nombre de [transactions nécessaires](https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+77) pour produire un minimum de 3% d'intérêt sur 12 mois (~87).
+3. On peut déterminer un taux d'intérêt sur le compte épargne en fonction de la vélocité de l'argent (calculée sur 12 mois). Il y a un seuil de X mouvements qui détermine un taux est au minimum de 3%.
 
 > Note: la formule utilisée pour le calcul de vie d'une unité de 100 chf, est celle de l'intérêt composé 
 > 
