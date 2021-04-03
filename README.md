@@ -1,6 +1,6 @@
 # Nom-De-Bank
 
-Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1)régulation bancaire obligatoire**, **(2)[un jeux à somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
+Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1)régulation bancaire obligatoire**, **(2)un jeux à [somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
 
 ## L'idée
 
