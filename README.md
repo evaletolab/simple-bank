@@ -1,7 +1,7 @@
 ## L'idée
 Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1) régulation bancaire obligatoire**, **(2) jeux à somme nulle**, **(3) insitation financière évidente**, **(4) pseudo anonyme**
 
-Voici une idée simple, qui mélange l'aide au commerce local, et l'investissement avec son taux d'intérêt. Son principe est simple, lorsqu'un utilisateur achête des CHF numériques, il contracte automatiquement une dette de 20% du montant (Une montant de 100 fr lui coute 80 fr). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et placé à la banque. 
+Voici une idée simple pour créer une banque sans license bancaire et qui mélange l'aide au commerce local et l'épargne avec son taux d'intérêt (que j'espère) supérieur à 3%. Son principe est simple, lorsqu'un utilisateur achête des CHF numériques, il contracte automatiquement une dette de 20% du montant (Une montant de 100 fr lui coute 80 fr). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et placé à la banque. 
 
 ![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
 
@@ -12,7 +12,15 @@ Voici une idée simple, qui mélange l'aide au commerce local, et l'investisseme
 5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% est garanti 
 6. la valeur précise du % est un calcul sur le montant total collecté par la somme des transactions
 7. l'intérêt est annuel, mais son actualisation est à la seconde
-,
+
+### Exemple,
+1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
+2. Chaque unité de 100 chf, 
+  * il faut 333 mouvements pour être consommé complètement par les 0.3%.
+  * il faut 66 mouvements pour rembourser complètement la dette.
+  * il faut 76 mouvements pour rembourser et produire 3% sur le compte épargne.
+3. On peut déterminer un taux d'intérêt sur le compte épargne, en fonctione de la vitesse de déplacement de l'argent sur 12 mois Au dessus de 76 mouvement par unité, le taux est supérieur à 3%.
+
 
 
 ## Prepare
