@@ -8,7 +8,7 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 
 
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
-2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% et 3 centimes est prélevée. 
+2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
 3. Des investisseurs placent de l'argent à la banque sur un compte épargne.
 4. Cet argent est bloqué pour au minimum N mois.
 5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% devrait être obtenu.
