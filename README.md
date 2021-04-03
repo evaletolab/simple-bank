@@ -1,6 +1,6 @@
+Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1) régulation bancaire obligatoire**, **(2) [jeux à somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3) insitation financière évidente**, **(4) pseudo anonyme**, **(5) 100% auditable**
 
 ## L'idée
-Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1) régulation bancaire obligatoire**, **(2) [jeux à somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3) insitation financière évidente**, **(4) pseudo anonyme**, **(5) 100% auditable**
 
 Voici une idée simple pour créer une banque sans license bancaire et qui mélange l'aide au commerce local et l'épargne avec son taux d'intérêt (que j'espère) supérieur à 3%. Son principe est simple, lorsqu'un utilisateur achête des CHF numériques, il contracte automatiquement une dette de 20% du montant (Un montant de 100 fr lui coute 80 fr). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et placé à la banque. 
 
