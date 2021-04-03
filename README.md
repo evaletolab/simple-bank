@@ -1,7 +1,7 @@
 ## L'idée
 Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1) régulation bancaire obligatoire**, **(2) jeux à somme nulle**, **(3) insitation financière évidente**, **(4) pseudo anonyme**, **(5) 100% auditable**
 
-Voici une idée simple pour créer une banque sans license bancaire et qui mélange l'aide au commerce local et l'épargne avec son taux d'intérêt (que j'espère) supérieur à 3%. Son principe est simple, lorsqu'un utilisateur achête des CHF numériques, il contracte automatiquement une dette de 20% du montant (Une montant de 100 fr lui coute 80 fr). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et placé à la banque. 
+Voici une idée simple pour créer une banque sans license bancaire et qui mélange l'aide au commerce local et l'épargne avec son taux d'intérêt (que j'espère) supérieur à 3%. Son principe est simple, lorsqu'un utilisateur achête des CHF numériques, il contracte automatiquement une dette de 20% du montant (Un montant de 100 fr lui coute 80 fr). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et placé à la banque. 
 
 
 1. Pour chaque achat de token 100% CHF, l'utilisateur doit payé 80 CHF.
@@ -18,7 +18,8 @@ Voici une idée simple pour créer une banque sans license bancaire et qui méla
   * il faut 333 mouvements de 100 chf pour être consommé complètement par les 0.3%.
   * il faut 66 mouvements de 100 chf pour rembourser complètement la dette.
   * il faut 76 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
-3. On peut déterminer un taux d'intérêt sur le compte épargne, en fonctione de la vitesse de déplacement de l'argent sur 12 mois Au dessus de 76 mouvement par unité, le taux est supérieur à 3%.
+3. La durée de vie d'une unité de 100 chf, c'est le nombre de [transactions nécessaires](https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+77) pour produire le minimum de 3% d'intérêt sur 12 mois
+3. On peut déterminer un taux d'intérêt sur le compte épargne, en fonction de la vélocité de l'argent (calculée sur 12 mois). Il y a un seuil de X mouvements qui détermine un taux est au minimum de 3%.
 
 > Note: la formule utilisée pour le calcule de vie d'une unité de 100 chf, est celle de l'intérêt composé 
 > `f(year) = 100 *(1 - 0.3%)^year` 
