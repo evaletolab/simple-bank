@@ -7,7 +7,7 @@ Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1)r
 Voici une idée simple pour créer une banque sans licence bancaire et qui mélange l'aide au commerce local et l'épargne avec son taux d'intérêt incitatif à l'épargne. Le principe est simple, lorsqu'un utilisateur achète des CHF numériques, il contracte automatiquement une dette de 20% du montant (Un montant de 100chf coute 80chf). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribué à la banque sur les comptes d'épargne. 
 
 
-1. Pour chaque achat de token 100% CHF, l'utilisateur doit payer 80 CHF.
+1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
 2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% et 3 centimes est prélevée. 
 3. Des investisseurs placent de l'argent à la banque sur un compte épargne.
 4. Cet argent est bloqué pour au minimum N mois.
