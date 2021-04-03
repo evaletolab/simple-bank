@@ -20,6 +20,8 @@ Voici une idée simple pour créer une banque sans license bancaire et qui méla
   * il faut 76 mouvements pour rembourser et produire 3% sur le compte épargne.
 3. On peut déterminer un taux d'intérêt sur le compte épargne, en fonctione de la vitesse de déplacement de l'argent sur 12 mois Au dessus de 76 mouvement par unité, le taux est supérieur à 3%.
 
+> Note: la formule utilisée pour le calcule de vie d'une unité de 100 chf, est celle de l'intérêt composé `f(x) = 100 *(1 - 0.3%)^year` 
+
 ![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
 
 ## Prepare
