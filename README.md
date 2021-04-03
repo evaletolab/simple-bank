@@ -14,7 +14,7 @@ Voici une idée simple pour créer une banque sans license bancaire et qui méla
 
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
-2. Pour l'unité de 100 chf, 
+2. Pour une unité de 100 chf, 
   * il faut 333 mouvements de 100 chf pour être consommé complètement par les 0.3%.
   * il faut 66 mouvements de 100 chf pour rembourser complètement la dette.
   * il faut 76 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
