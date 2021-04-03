@@ -30,7 +30,7 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 
 > Note: la formule utilisée pour le calcul de vie d'une unité de 100 chf, est celle de l'intérêt composé 
 > 
-> `f(year) = 100 *(1 - 0.3%)^year` 
+> `f(tx) = 100 *(1 - 0.3%)^tx - tx*0.03` 
 > 
 > Et son inverse,
 > => https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+1 
