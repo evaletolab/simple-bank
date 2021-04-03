@@ -3,7 +3,6 @@ Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1) 
 
 Voici une idée simple pour créer une banque sans license bancaire et qui mélange l'aide au commerce local et l'épargne avec son taux d'intérêt (que j'espère) supérieur à 3%. Son principe est simple, lorsqu'un utilisateur achête des CHF numériques, il contracte automatiquement une dette de 20% du montant (Une montant de 100 fr lui coute 80 fr). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et placé à la banque. 
 
-![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
 
 1. Pour chaque achat de token 100% CHF, l'utilisateur doit payé 80 CHF.
 2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% est prélevée. 
@@ -21,7 +20,7 @@ Voici une idée simple pour créer une banque sans license bancaire et qui méla
   * il faut 76 mouvements pour rembourser et produire 3% sur le compte épargne.
 3. On peut déterminer un taux d'intérêt sur le compte épargne, en fonctione de la vitesse de déplacement de l'argent sur 12 mois Au dessus de 76 mouvement par unité, le taux est supérieur à 3%.
 
-
+![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
 
 ## Prepare
 `mkdir my-eth-project && cd my-eth-project`
