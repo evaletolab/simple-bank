@@ -1,3 +1,4 @@
+
 ## L'idée
 Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1) régulation bancaire obligatoire**, **(2) [jeux à somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3) insitation financière évidente**, **(4) pseudo anonyme**, **(5) 100% auditable**
 
