@@ -1,25 +1,30 @@
 <template>
   <div class="bank">
     <h1>Bienvenue dans votre banque!!</h1>
-    <h2>Connecté avec: {{account}} ({{formatEther(balance)}} ETH)</h2>
-    <h2>Montants déposés: {{formatEther(depositedAmount)}} ETH</h2>
     <br/>
 
     <section>
         <b-tabs v-model="activeTab">
+            <b-tab-item label="Account" >
+                <h2>Connecté avec: {{account}} ({{formatEther(balance)}} ETH)</h2>
+                <h2>Montants déposés: {{formatEther(depositedAmount)}} ETH</h2>
+                <h2>Token ({{tokenName}}): {{formatEther(tokenBalance)}} {{tokenSymbol}}</h2>              
+                <h2>Interest ({{tokenInterest}}): since {{tokenInterestSince}}</h2>              
+            </b-tab-item>
+
             <b-tab-item label="Deposit">
               <div>
                 <p>How much do you want to deposit?</p>
                 <p>(min. amount is 0.001 ETH)</p>
                 <p>(1 deposit is possible at the time)</p>
-                <form  @submit="onDeposit">
+                <form  >
                   <b-field label="Amount">
                     <b-input 
                       v-model="depositAmount"
                       step="0.01"
                       type='number' placeholder='amount...'></b-input>
                   </b-field>
-                  <b-button type='submit' value="DEPOSIT">DEPOSIT</b-button>
+                  <b-button @click="onDeposit">DEPOSIT</b-button>
                 </form>
               </div>
             </b-tab-item>
@@ -32,9 +37,7 @@
                 <form  @submit="onWithdraw">
                   <b-button @click="onWithdraw" value="WITHDRAW">WITHDRAW</b-button>
                 </form>
-              </div>
-
-              
+              </div>    
             </b-tab-item>
 
             <b-tab-item label="Videos" disabled>
@@ -51,7 +54,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 
 import Token from '../../abis/Token.json';
 import dBank from '../../abis/dBank.json';
@@ -63,6 +66,11 @@ export default class SimpleBank extends Vue {
 
   account = null as any;
   balance = '0';
+  tokenName = '--';
+  tokenSymbol = '--';
+  tokenBalance = '';
+  tokenInterest = '';
+  tokenInterestSince = 0;
   token = {} as any; 
   dbank = {} as any; 
   dBankAddress = {};
@@ -78,7 +86,7 @@ export default class SimpleBank extends Vue {
   }
 
   formatEther(amount) {
-    return ethers.utils.formatEther(amount);
+    return ethers.utils.formatEther(amount || 0);
   }
 
   get Token() {
@@ -137,16 +145,14 @@ export default class SimpleBank extends Vue {
 
     // To connect to the user's wallet, we have to run this method.
     // It returns a promise that will resolve to the user's address.
+    this.account = account;
 
     //
     //load balance
 
-    
-
     // this.balance = await web3.eth.getBalance(account);
-    this.balance = (await provider.getBalance(account)).toString();
+    this.balance = (await provider.getBalance(this.account)).toString();
 
-    this.account = account;
 
     //
     //load contracts
@@ -163,18 +169,46 @@ export default class SimpleBank extends Vue {
         signer
       );
 
+      // this.token.on('MinterChanged',(from: any, to: any) =>{
+      //   console.log('--- DBG MinterChanged evnt',from,to);
+      // });
+
+      this.dbank.on('Deposit',(user: any, etherAmount: any, timeStart: any) =>{
+        console.log('--- DBG deposit evnt',user,etherAmount.toString());
+        this.depositedAmount = (etherAmount.toString());
+      });
+
+      this.dbank.on('Interest',(user,etherAmount,depositTime,interest) => {
+        console.log('--- DBG Withdraw evnt',user,etherAmount.toString(),interest.toString());
+        this.tokenInterest = interest;
+        this.tokenInterestSince = depositTime;
+      });
+
+
+
       this.dBankAddress = this.dBank.address;
       this.depositedAmount = (await this.dbank.etherBalanceOf(this.account)).toString();
       console.log('--- DBG dbank address',this.dBankAddress);
       
       const signerAddress = await signer.getAddress();
-      console.log('--- DBG signer deposit',this.account, this.depositedAmount );
+      console.log('--- DBG signer deposit',this.account, this.formatEther(this.depositedAmount) );
+
+      this.tokenName = await this.token.name();
+      this.tokenSymbol = await this.token.symbol();
+      this.tokenBalance = (await this.token.balanceOf(this.account)).toString();
+      console.log('--- DBG token balance',(await this.token.name()), (this.tokenBalance));
+
 
     } catch (e) {
       console.log('Error', e);
       window.alert('Contracts not deployed to the current network')
     }
 
+    try{
+      await this.dbank.interestStatus();
+    }catch(e) {
+      console.log('Error', e);
+    }
   }
 
   async deposit(amount) {
@@ -183,8 +217,7 @@ export default class SimpleBank extends Vue {
       // TODO WARN
     }
     try{
-      const result = await this.dbank.deposit({value:amount.toString()});
-
+      const result = await this.dbank.deposit({value:amount.toString()});      
     } catch (e) {
       console.log('Error, deposit: ', e)
     }

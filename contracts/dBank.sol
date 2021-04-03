@@ -16,6 +16,7 @@ contract dBank {
   //add events
   event Deposit(address indexed user, uint etherAmount, uint timeStart);
   event Withdraw(address indexed user, uint etherAmount, uint depositTime, uint interest);
+  event Interest(address indexed user, uint etherAmount, uint depositTime, uint interest);
 
   //pass as constructor argument deployed Token contract
   constructor(Token _token) public {
@@ -35,6 +36,32 @@ contract dBank {
 
     //emit Deposit event
     emit Deposit(msg.sender, msg.value, block.timestamp);
+  }
+
+  // 
+  // use view for non-payable function
+  function interestStatus() public returns (uint, uint, uint){
+    require(isDeposited[msg.sender]==true, 'Error, no previous deposit');
+    uint userBalance = etherBalanceOf[msg.sender]; 
+
+
+    //check user's hodl time
+    uint depositTime = block.timestamp - depositStart[msg.sender];
+
+    //
+    //calc interest per second
+    //calc accrued interest
+    //(etherBalanceOf[msg.sender] / 1e16) - calc. how much higher interest will be (based on deposit), e.g.:
+    //for min. deposit (0.01 ETH), (etherBalanceOf[msg.sender] / 1e16) = 1 (the same, 31668017/s)
+    //for deposit 0.02 ETH, (etherBalanceOf[msg.sender] / 1e16) = 2 (doubled, (2*31668017)/s)
+    uint interestPerSecond = 31668017 * (userBalance / 1e15);
+    uint interest = interestPerSecond * depositTime;
+
+    //emit event        
+    console.log("Interest:", userBalance, depositTime, interest);
+    // emit is a payable function
+    emit Interest(msg.sender, userBalance, depositTime, interest);    
+    return (userBalance, depositTime, interest);
   }
 
   function withdraw() public {

@@ -1,3 +1,4 @@
+const { BigNumber } = require("@ethersproject/bignumber");
 const { expect } = require("chai");
 const EVM_REVERT = 'VM Exception while processing transaction: revert';
 
@@ -68,6 +69,18 @@ const wait = s => {
 
       it('deposit status should eq true', async () => {
         expect(await dbank.isDeposited(user.address)).to.eq(true)
+      })
+
+      // it('interest after one second should > 0', async ()=>{
+      //   expect(
+      //    await dbank.connect(user).interestStatus()
+      //   ).to.eq([BigNumber.from(10**15), BigNumber.from(1), BigNumber.from(31668017)])
+      //  })
+ 
+      it('interest after one second should > 0', async ()=>{
+       await expect(dbank.connect(user).interestStatus())
+                  .to.emit(dbank, 'Interest')
+                  .withArgs(user.address, 10**15, 1, 31668017);        
       })
     })
 
