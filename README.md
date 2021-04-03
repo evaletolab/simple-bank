@@ -1,5 +1,18 @@
-## Idea
+## L'idée
+Il faut trouver un exemple qui réunis au minimum les critères suivants: **(1) régulation bancaire obligatoire**, **(2) jeux à somme nulle**, **(3) insitation financière évidente**, **(4) pseudo anonyme**
+
+Voici une idée simple, qui mélange l'aide au commerce local, et l'investissement avec son taux d'intérêt. Son principe est simple, lorsqu'un utilisateur achête des CHF numériques, il contracte automatiquement une dette de 20% du montant (Une montant de 100 fr lui coute 80 fr). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et placé à la banque. 
+
 ![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
+
+1. Pour chaque achat de token 100% CHF, l'utilisateur doit payé 80 CHF.
+2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% est prélevée. 
+3. Des investisseurs (que l'on nomme compte épargne) placent de l'argent à la banque 
+4. Cet argent est bloqué pour au minimum N mois
+5. Dans chaque compte épargne, un intérêt annuel supérieur à 3% est garanti 
+6. la valeur précise du % est un calcul sur le montant total collecté par la somme des transactions
+7. l'intérêt est annuel, mais son actualisation est à la seconde
+,
 
 
 ## Prepare
