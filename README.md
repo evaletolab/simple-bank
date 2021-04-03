@@ -25,6 +25,9 @@ Voici une idée simple pour créer une banque sans licence bancaire et qui méla
 3. La durée de vie d'une unité de 100 chf, c'est le nombre de [transactions nécessaires](https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+77) pour produire un minimum de 3% d'intérêt sur 12 mois (~87).
 3. On peut déterminer un taux d'intérêt sur le compte épargne en fonction de la vélocité de l'argent (calculée sur 12 mois). Il y a un seuil de X mouvements qui détermine un taux est au minimum de 3%.
 
+![image](https://user-images.githubusercontent.com/1422935/113487142-96ce6700-94b6-11eb-8888-e97d6ee217b1.png)
+
+
 > Note: la formule utilisée pour le calcul de vie d'une unité de 100 chf, est celle de l'intérêt composé 
 > 
 > `f(year) = 100 *(1 - 0.3%)^year` 
