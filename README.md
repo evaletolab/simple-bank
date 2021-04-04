@@ -21,9 +21,9 @@ Voici une idée simple pour créer une banque sans licence qui mélange l'aide a
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
 2. Cycle de vie d'une unité de 100 chf, 
-  * il faut ~550 mouvements de 100 chf pour être consommé complètement (<1 chf) par les 0.3% + 3 centimes.
-  * il faut ~77 mouvements de 100 chf pour rembourser complètement la dette.
-  * il faut ~87 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
+   1. il faut ~550 mouvements de 100 chf pour être consommé complètement (<1 chf) par les 0.3% + 3 centimes.
+   2. il faut ~77 mouvements de 100 chf pour rembourser complètement la dette.
+   3. il faut ~87 mouvements de 100 chf pour rembourser et produire 3% sur le compte épargne.
 3. La durée de vie d'une unité de 100 chf, c'est le nombre de [transactions nécessaires](https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+77) pour produire un minimum de 3% d'intérêt sur 12 mois (~87).
 4. On peut déterminer un taux d'intérêt sur le compte épargne en fonction de la vélocité de l'argent (calculée sur 12 mois). Cependant, il faut une vélocité qu'une liquidité minimum pour garantir un taux minimum de incitatif pour l'épargnant.
 
