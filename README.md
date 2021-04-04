@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/1422935/113506194-9f20b380-9543-11eb-8ffe-6ed2b181896b.png)
+![image](https://user-images.githubusercontent.com/1422935/113506347-a5fbf600-9544-11eb-820e-c737e81c6695.png)
 
 # Une expérience économique
 
