@@ -6,7 +6,7 @@ Pour réaliser cette expérience, il faut résoudre les problèmes suivants: **(
 
 ## L'idée
 
-Voici une idée simple pour créer une banque sans licence et qui mélange l'aide au commerce local et l'épargne avec son taux d'intérêt incitatif à l'épargne. Le principe est simple, lorsqu'un utilisateur achète des CHF numériques, il contracte automatiquement une dette de 20% du montant (Un montant de 100chf coute 80chf). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribué à la banque sur les comptes d'épargne. 
+Voici une idée simple pour créer une banque sans licence qui mélange l'aide au commerce local et l'épargne avec un taux d'intérêt incitatif. Le principe est simple, lorsqu'un utilisateur achète des CHF numériques, il contracte automatiquement une dette de 20% du montant (Un montant de 100chf coute 80chf). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribué à la banque pour les comptes d'épargne. 
 
 
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
