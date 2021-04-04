@@ -33,9 +33,6 @@ Voici une idée simple pour créer une banque sans licence qui mélange l'aide a
 > Note: formule utilisée pour le calcul de vie d'une unité de 100 chf
 > 
 > `f(tx) = 100 *(1 - 0.3%)^tx - tx*0.03` 
-> 
-> Et son inverse,
-> => https://www.wolframalpha.com/input/?i=solve+100*0.997%5Ex+%3D+1 
 
 ![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
 
