@@ -5,6 +5,9 @@ import "hardhat/console.sol";
 
 contract dBank {
 
+  // bank owner FIXME not mandatory
+  address public owner;
+
   //assign Token contract to variable
   Token private token;
 
@@ -12,6 +15,30 @@ contract dBank {
   mapping(address => uint) public etherBalanceOf;
   mapping(address => uint) public depositStart;
   mapping(address => bool) public isDeposited;
+
+  //
+  // total amount deposited (source symbol)
+  uint public totalLiquidity = 0;
+
+  //
+  // total deposited amount locked in debt (source symbol)
+  uint public totalLocked = 0;
+
+  //
+  // debt laverage (buy 80 chf and get 100 chf )
+  uint public DEFAULT_LEVERAGE = .25;
+
+  //
+  // default YPA
+  uint public DEFAULT_YPA = 0.3;
+
+  //
+  // eth/chf price is fixed 1/2000 
+  uint public DEFAULT_ETH_CHF = 0.005;
+
+  //
+  // wei / eth unit converter
+  uint public DEFAULT_WEI = 1e18;
 
   //add events
   event Deposit(address indexed user, uint etherAmount, uint timeStart);
@@ -22,17 +49,53 @@ contract dBank {
   constructor(Token _token) public {
     //assign token deployed contract to variable
     token = _token;
+    owner = msg.sender;
   }
 
+  //
+  // One way debt provider
+  // check liquidity and accept contract
+  // minimal 100 chf buy
+  function buy() payable public {    
+    //
+    // convert amount
+    uint weiAmount = (msg.value);
+    uint chfAmount = (msg.value / DEFAULT_WEI) * DEFAULT_ETH_CHF;
+    require(chfAmount >= 80, "Error, buy must be >= 80 xCHF!");
+
+    //
+    // check if there is available liquidity
+    uint debtAmount = weiAmount * DEFAULT_LEVERAGE;
+    require((totalLiquidity - totalLocked) >= debtAmount , "Error, not enough liquidity!");
+
+    //
+    // locked amount 
+    totalLocked = totalLocked + debtAmount; 
+
+    //
+    // mint chf(debtAmount) + chfAmount;
+    // for input 80 chf => 100 chf are minted
+    uint mintAmount = (weiAmount + debtAmount) / DEFAULT_WEI * DEFAULT_ETH_CHF;
+    token.mint(msg.sender, mintAmount);
+  }
+
+  //
+  // create debt liquidity
+  // only one deposit by address
   function deposit() payable public {
     //check if msg.sender didn't already deposited funds
     require(isDeposited[msg.sender] == false, "Error, deposit already active!");
-    //check if msg.value is >= than 0.01 ETH
-    require(msg.value >= 1e15, "Error, deposit must be >= 0,001 ETH!");
 
+    //check if msg.value is >= than 0.01 ETH
+    require(msg.value >= 1e16, "Error, deposit must be >= 0,01 ETH!");
+
+    //
+    // store liquidity
     etherBalanceOf[msg.sender] = etherBalanceOf[msg.sender] + msg.value;
     depositStart[msg.sender] = depositStart[msg.sender] + block.timestamp;
     isDeposited[msg.sender] = true;
+
+    totalLiquidity = totalLiquidity + msg.value;
 
     //emit Deposit event
     emit Deposit(msg.sender, msg.value, block.timestamp);
