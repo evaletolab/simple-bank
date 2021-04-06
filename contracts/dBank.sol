@@ -53,7 +53,7 @@ contract dBank {
   }
 
   //
-  // One way debt provider
+  // Oneway debt provider
   // check liquidity and accept contract
   // minimal 100 chf buy
   function buy() payable public {    
