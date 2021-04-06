@@ -11,7 +11,7 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
 2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
 3. Des investisseurs placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/))  à la banque sur un compte épargne.
-4. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent est une fonction à somme nulle, ce qui implique une limite).
+4. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent dépend de la liquidité disponible moins la liquidité bloquée en dettes).
 5. Dans chaque compte épargne, un intérêt annuel de minimum 3% 🚀.
 6. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
 7. L'intérêt est annuel, mais son actualisation est à la seconde.
