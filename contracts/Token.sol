@@ -7,6 +7,16 @@ import "hardhat/console.sol";
 contract Token is ERC20 {
   address public minter;
 
+
+  //
+  // eth/chf price is fixed 1/2000 
+  uint public DEFAULT_FEE = 0.003;
+
+  //
+  // wei / eth unit converter
+  uint public DEFAULT_WEI = 1e18;
+
+
   //add minter changed event
   event MinterChanged(address indexed from, address to); 
 
@@ -30,4 +40,16 @@ contract Token is ERC20 {
     require(msg.sender == minter,"Tu n'as pas le droit de battre ma monnaie");
 		_mint(account, amount);
 	}
+
+  function transfer(address _to, uint256 _value) returns (bool success) {
+    return transferFrom(mgs.sender,_to, _value);
+  }
+
+  function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+    uint fees = value * DEFAULT_FEE;
+    super.transferFrom(from,minter,fees);
+    super.transferFrom(from,to,newAmount - fees);
+    return true;
+  }
+
 }

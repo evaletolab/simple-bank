@@ -18,6 +18,7 @@ contract dBank {
 
   //
   // total amount deposited (source symbol)
+  // FIXME We should lock 10% of the (totalLiquidity - totalLocked) for withdraw
   uint public totalLiquidity = 0;
 
   //
@@ -29,8 +30,9 @@ contract dBank {
   uint public DEFAULT_LEVERAGE = .25;
 
   //
-  // default YPA
-  uint public DEFAULT_YPA = 0.3;
+  // default YPA / [s]
+  // 3% YPA means 3% / 31536000[s] for 1 sec
+  uint public DEFAULT_YPA_PER_SEC = (0.03 / 31536000);
 
   //
   // eth/chf price is fixed 1/2000 
@@ -40,7 +42,8 @@ contract dBank {
   // wei / eth unit converter
   uint public DEFAULT_WEI = 1e18;
 
-  //add events
+  //
+  // add events
   event Deposit(address indexed user, uint etherAmount, uint timeStart);
   event Withdraw(address indexed user, uint etherAmount, uint depositTime, uint interest);
   event Interest(address indexed user, uint etherAmount, uint depositTime, uint interest);
@@ -53,7 +56,7 @@ contract dBank {
   }
 
   //
-  // Oneway debt provider
+  // oneway debt provider
   // check liquidity and accept contract
   // minimal 100 chf buy
   function buy() payable public {    
@@ -102,7 +105,7 @@ contract dBank {
   }
 
   // 
-  // use view for non-payable function
+  // depositer can have an over
   function interestStatus() public returns (uint, uint, uint){
     require(isDeposited[msg.sender]==true, 'Error, no previous deposit');
     uint userBalance = etherBalanceOf[msg.sender]; 
@@ -131,19 +134,21 @@ contract dBank {
     //check if msg.sender deposit status is true
     //assign msg.sender ether deposit balance to variable for event
     require(isDeposited[msg.sender]==true, 'Error, no previous deposit');
+
+    //
+    // check if there is enough liquidity for a withdraw
     uint userBalance = etherBalanceOf[msg.sender]; 
+    require((totalLiquidity - totalLocked) < userBalance , "Error, not enough liquidity for withdraw, please wait!");
 
 
     //check user's hodl time
     uint depositTime = block.timestamp - depositStart[msg.sender];
 
     //
-    //calc interest per second
+    // Calc interest per second bysed on YPA
+    // 3% YPA means 3% / 31536000[s] 
     //calc accrued interest
-    //(etherBalanceOf[msg.sender] / 1e16) - calc. how much higher interest will be (based on deposit), e.g.:
-    //for min. deposit (0.01 ETH), (etherBalanceOf[msg.sender] / 1e16) = 1 (the same, 31668017/s)
-    //for deposit 0.02 ETH, (etherBalanceOf[msg.sender] / 1e16) = 2 (doubled, (2*31668017)/s)
-    uint interestPerSecond = 31668017 * (userBalance / 1e15);
+    uint interestPerSecond = DEFAULT_YPA_PER_SEC * (userBalance);
     uint interest = interestPerSecond * depositTime;
 
     //console.log("Interest per second:", interestPerSecond,interest);
