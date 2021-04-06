@@ -42,13 +42,13 @@ contract Token is ERC20 {
 	}
 
   function transfer(address _to, uint256 _value) returns (bool success) {
-    return transferFrom(mgs.sender,_to, _value);
+    return transferFrom(msg.sender,_to, _value);
   }
 
   function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-    uint fees = value * DEFAULT_FEE;
-    super.transferFrom(from,minter,fees);
-    super.transferFrom(from,to,newAmount - fees);
+    uint fees = _value * DEFAULT_FEE;
+    super.transferFrom(_from,minter,fees);
+    super.transferFrom(_from,_to, (_value - fees));
     return true;
   }
 
