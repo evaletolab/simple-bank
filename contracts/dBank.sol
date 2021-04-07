@@ -26,21 +26,22 @@ contract dBank {
   uint public totalLocked = 0;
 
   //
-  // debt laverage (buy 80 chf and get 100 chf )
-  uint public DEFAULT_LEVERAGE = .25;
-
-  //
-  // default YPA / [s]
-  // 3% YPA means 3% / 31536000[s] for 1 sec
-  uint public DEFAULT_YPA_PER_SEC = (0.03 / 31536000);
-
-  //
-  // eth/chf price is fixed 1/2000 
-  uint public DEFAULT_ETH_CHF = 0.005;
+  // debt laverage (buy 80 chf and get 100 chf ) (0.25)
+  uint256 private constant DEFAULT_LEVERAGE = 250000000000000000;
 
   //
   // wei / eth unit converter
   uint public DEFAULT_WEI = 1e18;
+
+  //
+  // default YPA / [s]
+  // 3% YPA means 3% / 31614774[s] for 1 sec
+  // ((3n*DEFAULT_WEI) / (31614774n) + DEFAULT_WEI)
+  uint256 private constant DEFAULT_YPA_PER_SEC = 1000000000948923436;
+
+  //
+  // eth/chf price is fixed 1:1 (0.005)
+  uint256 private constant DEFAULT_ETH_CHF = 1;
 
   //
   // add events
