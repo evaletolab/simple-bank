@@ -56,31 +56,44 @@ describe("Token", async function() {
     })
 
     it('checking token transfer', async () => {
-      const chf100 = 100n * 1000000000000000000n;      
-      token.mint(user.address,chf100);
+      const chf100 = 100n * 1000000000000000000n;    
+      const chf50 = 50n * 1000000000000000000n;    
+      const chffees = (chf50 * 3n) / 1000n;
+      const trasnferedAmount = chf50 - chffees;   
 
       //
-      // fees destination
-      await token.passMinterRole(dbank.address);
-
+      // mint initial token amount
+      token.mint(user.address,chf100);
       const totalamount = (await token.totalSupply());
       expect(totalamount.toString()).to.eq(chf100.toString());
-      let useramount = await token.balanceOf(user.address);
-      let aliceamount = await token.balanceOf(alice.address);
-      let dbankamount = await token.balanceOf(dbank.address);
-      console.log('0 --- total balance',totalamount.toString(),chf100);
-      console.log('0 --- user balance',useramount.toString());
-      console.log('0 --- alice balance',aliceamount.toString());
-      console.log('0 --- bank balance',dbankamount.toString());
 
-      await token.connect(user).transfer(alice.address, 50n*1000000000000000000n);
+      //
+      // tranfer minter role 
+      await token.passMinterRole(dbank.address);
+
+      let useramount = await token.balanceOf(user.address);
+      expect(useramount.toString()).to.eq(chf100.toString());
+
+      let aliceamount = await token.balanceOf(alice.address);
+      expect(aliceamount.toString()).to.eq('0');
+
+      let dbankamount = await token.balanceOf(dbank.address);
+      expect(dbankamount.toString()).to.eq('0');
+
+      //
+      // transfert 50 chf to alice
+      await token.connect(user).transfer(alice.address, chf50);
+
+      //
+      // verify account user, alice and bank
       useramount = await token.balanceOf(user.address);
+      expect(useramount.toString()).to.eq((chf100-chf50).toString());
+
       aliceamount = await token.balanceOf(alice.address);
+      expect(aliceamount.toString()).to.eq(trasnferedAmount.toString());
+
       dbankamount = await token.balanceOf(dbank.address);
-      console.log('1 --- user balance',useramount.toString());
-      console.log('1 --- alice balance',aliceamount.toString(),alice.address);
-      console.log('1 --- bank balance',dbankamount.toString(),dbank.address);
-      //expect(await token.balanceOf(alice.address)).to.equal(50);      
+      expect(dbankamount.toString()).to.eq(chffees.toString());
     });
   });
 });

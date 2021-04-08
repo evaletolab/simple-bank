@@ -9,19 +9,13 @@ describe("Token tools", async function() {
     const month = 2635200n;
     const year = 31614774n;
     const year100 = 3161477400n;
-    console.log('-- one wei', wei);
     console.log('-- one minute interest is', 1n * hour * wei * 3n/year100);
-    console.log('float -- 1050.35 fr one year interest 3% YPA is', 1050.35 * 31614774 * 3/3161477400);
-    console.log('wei   -- 1050.35 fr one year interest 3% YPA is', BigInt(1050.35 * 1e18) * year * 3n/year100 );
-
     console.log('float -- 1050.35 fr one month interest 3% YPA is', 1050.35 * (3600 * 24 * 30.5) * 3/3161477400, '1.51/12 =',31.5105/12);
-
     console.log('wei   -- 1050.35 fr one month interest 3% YPA is', BigInt(1050.35 * 1e18) * (month) * 3n/year100, '1.51/12 =',31.5105/12);
   });
 
   it("laverage operation in wei", () =>{
     const wei = 1000000000000000000n;
-    console.log('-- one wei', wei);
     console.log('float -- debt laverage for 100 fr buy ',100 - 80 * .25,'debt', 80 * .25);
     const laverage = BigInt(.25 * 1e18);
     console.log('wei   -- debt laverage',laverage);

@@ -50,16 +50,19 @@ contract Token is ERC20 {
 		_mint(account, amount);
 	}
 
+  // FIXME check: the permit method allow token transfer without GAS fees
   function transfer(address _to, uint256 _value) public virtual override returns (bool success) {
     return transferFrom(msg.sender,_to, _value);
   }
 
   function transferFrom(address _from, address _to, uint256 _value) public virtual override returns (bool success) {
     uint fees = (_value * 3) / DEFAULT_FEE;
-    console.log("tx amount, fees:", _value,fees,minter);
+    // DEBUG
+    // console.log("tx amount, fees:", _value,fees,minter);
 
+    //
+    // FIXME what is the purpose of approve
     approve(msg.sender, _value);
-
     //allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
 
     super.transferFrom(_from,minter,fees);
