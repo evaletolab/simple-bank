@@ -26,7 +26,7 @@ contract dBank {
   uint public totalLocked = 0;
 
   //
-  // debt laverage (buy 80 chf and get 100 chf ) (0.25)
+  // debt laverage (buy 80 chf and get 100 chf ) (0.25 * 1e18)
   uint256 private constant DEFAULT_LEVERAGE = 250000000000000000;
 
   //
@@ -35,13 +35,13 @@ contract dBank {
 
   //
   // default YPA / [s]
-  // 3% YPA means 3% / 31614774[s] for 1 sec
-  // ((3n*DEFAULT_WEI) / (31614774n) + DEFAULT_WEI)
-  uint256 private constant DEFAULT_YPA_PER_SEC = 1000000000948923436;
+  // 3% YPA = 3 / (31614774[s]+100) per 1[s]
+  // input * time * (3n / 3161477400n)
+  uint256 private constant DEFAULT_YPA_S = 948923436;
 
   //
-  // eth/chf price is fixed 1:1 (0.005)
-  uint256 private constant DEFAULT_ETH_CHF = 1;
+  // eth/chf price is fixed 1:2000 (x 2000)
+  uint256 private constant DEFAULT_ETH_CHF = 2000;
 
   //
   // add events
@@ -64,8 +64,9 @@ contract dBank {
     //
     // convert amount
     uint weiAmount = (msg.value);
-    uint chfAmount = (msg.value / DEFAULT_WEI) * DEFAULT_ETH_CHF;
-    require(chfAmount >= 80, "Error, buy must be >= 80 xCHF!");
+    uint chfAmount = (msg.value * DEFAULT_ETH_CHF);
+    require(chfAmount >= (80 * 1e18), "Error, buy must be >= 80 xCHF!");
+    require(chfAmount <= (5 * 80 * 1e18), "Error, buy must be <= 400 xCHF!");
 
     //
     // check if there is available liquidity
@@ -73,14 +74,14 @@ contract dBank {
     require((totalLiquidity - totalLocked) >= debtAmount , "Error, not enough liquidity!");
 
     //
-    // locked amount 
-    totalLocked = totalLocked + debtAmount; 
-
-    //
     // mint chf(debtAmount) + chfAmount;
     // for input 80 chf => 100 chf are minted
-    uint mintAmount = (weiAmount + debtAmount) / DEFAULT_WEI * DEFAULT_ETH_CHF;
+    uint mintAmount = (weiAmount + debtAmount) * DEFAULT_ETH_CHF;
     token.mint(msg.sender, mintAmount);
+
+    //
+    // locked amount 
+    totalLocked = totalLocked + debtAmount; 
   }
 
   //
@@ -117,17 +118,13 @@ contract dBank {
 
     //
     //calc interest per second
-    //calc accrued interest
-    //(etherBalanceOf[msg.sender] / 1e16) - calc. how much higher interest will be (based on deposit), e.g.:
-    //for min. deposit (0.01 ETH), (etherBalanceOf[msg.sender] / 1e16) = 1 (the same, 31668017/s)
-    //for deposit 0.02 ETH, (etherBalanceOf[msg.sender] / 1e16) = 2 (doubled, (2*31668017)/s)
-    uint interestPerSecond = 31668017 * (userBalance / 1e15);
-    uint interest = interestPerSecond * depositTime;
+    uint interest = DEFAULT_YPA_S * (userBalance) * depositTime;
 
     //emit event        
     console.log("Interest:", userBalance, depositTime, interest);
     // emit is a payable function
     emit Interest(msg.sender, userBalance, depositTime, interest);    
+
     return (userBalance, depositTime, interest);
   }
 
@@ -147,19 +144,16 @@ contract dBank {
 
     //
     // Calc interest per second bysed on YPA
-    // 3% YPA means 3% / 31536000[s] 
-    //calc accrued interest
-    uint interestPerSecond = DEFAULT_YPA_PER_SEC * (userBalance);
-    uint interest = interestPerSecond * depositTime;
-
+    uint interest = DEFAULT_YPA_S * (userBalance) * depositTime;
     //console.log("Interest per second:", interestPerSecond,interest);
 
-
-    //send eth to user
-    msg.sender.transfer(userBalance);
-    
+    //    
     //send interest in tokens to user
     token.mint(msg.sender, interest);
+
+    //
+    //send back eth to user
+    msg.sender.transfer(userBalance);
 
 
     //reset depositer data
