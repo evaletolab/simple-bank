@@ -28,8 +28,8 @@ describe("Token", async function() {
   })
 
 
-  describe('testing token contract...', () => {
-    describe('success', () => {
+  describe('testing token contract', () => {
+    describe('token attributes', () => {
       it('checking token name', async () => {
         expect(await token.name()).to.be.eq('One Less Bank')
       })

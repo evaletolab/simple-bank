@@ -118,7 +118,7 @@ contract dBank {
 
     //
     //calc interest per second
-    uint interest = DEFAULT_YPA_S * (userBalance) * depositTime;
+    uint interest = DEFAULT_YPA_S * (userBalance) * depositTime / 1e18;
 
     //emit event        
     console.log("Interest:", userBalance, depositTime, interest);
