@@ -58,6 +58,11 @@ describe("Token", async function() {
     it('checking token transfer', async () => {
       const chf100 = 100n * 1000000000000000000n;      
       token.mint(user.address,chf100);
+
+      //
+      // fees destination
+      await token.passMinterRole(dbank.address);
+
       const totalamount = (await token.totalSupply());
       expect(totalamount.toString()).to.eq(chf100.toString());
       let useramount = await token.balanceOf(user.address);
@@ -73,8 +78,8 @@ describe("Token", async function() {
       aliceamount = await token.balanceOf(alice.address);
       dbankamount = await token.balanceOf(dbank.address);
       console.log('1 --- user balance',useramount.toString());
-      console.log('1 --- alice balance',aliceamount.toString());
-      console.log('1 --- bank balance',dbankamount.toString());
+      console.log('1 --- alice balance',aliceamount.toString(),alice.address);
+      console.log('1 --- bank balance',dbankamount.toString(),dbank.address);
       //expect(await token.balanceOf(alice.address)).to.equal(50);      
     });
   });

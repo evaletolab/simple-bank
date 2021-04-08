@@ -56,7 +56,7 @@ contract Token is ERC20 {
 
   function transferFrom(address _from, address _to, uint256 _value) public virtual override returns (bool success) {
     uint fees = (_value * 3) / DEFAULT_FEE;
-    console.log("tx amount, fees:", _value,fees);
+    console.log("tx amount, fees:", _value,fees,minter);
 
     approve(msg.sender, _value);
 
