@@ -21,17 +21,9 @@ describe("dBank.deposit", async function() {
   beforeEach(async () => {
     token = await Token.deploy();
     dbank = await DecentralizedBank.deploy(token.address);
-    await token.passMinterRole(dbank.address, {from: deployer.address});
+    await token.passMinterRole(dbank.address);
   })
 
-  describe('deposit failure', async () => {
-    it('depositing should be rejected', async () => {
-      const value = 0.001 * 1e18;
-      await expect(
-        dbank.connect(user).deposit({value})
-      ).to.be.revertedWith(EVM_REVERT) //to small amount
-    })
-  });
 
   describe('deposit', () => {
     const eth005 = BigInt(0.05 * 1e18);
@@ -76,7 +68,16 @@ describe("dBank.deposit", async function() {
         expect(Number(await dbank.totalLocked())).to.eq(0);
       })
 
-    })    
+    });
+
+    describe('deposit failure', async () => {
+      it('depositing should be rejected', async () => {
+        const value = 0.001 * 1e18;
+        await expect(
+          dbank.connect(user).deposit({value})
+        ).to.be.revertedWith(EVM_REVERT) //to small amount
+      })
+    });  
   })
 
   describe('buy', () => {
@@ -90,17 +91,38 @@ describe("dBank.deposit", async function() {
         // deposit 100 chf (0.05 ether)
         await dbank.connect(user).deposit({value:eth005}) //0.5 ETH
         await dbank.connect(alice).buy({value:chf80}); // buy 100chf with 80 chf
-      })
+      });
 
       it('deposit totalLiquidity > 0', async () => {
         expect(Number(await dbank.totalLiquidity())).to.eq(Number(eth005));
-      })
+      });
 
       it('deposit totalLocked == 20 chf ( 20 / 2000 * 1e18 )', async () => {
         expect(Number(await dbank.totalLocked())).to.eq(Number(chf20));
+      });
+    }); 
+    describe('buy failure', async () => {
+      const chf401 =  BigInt(401 * 1e18 / 2000);
+      const chf20 =  BigInt(20 * 1e18 / 2000);
+      beforeEach(async () => {
+        // deposit 100 chf (0.05 ether)
+        await dbank.connect(user).deposit({value:eth005}) //0.5 ETH
       })
 
-    })    
+      it('buy failure < 80 chf', async () => {
+        await expect(
+          dbank.connect(alice).buy({value:chf20}) // buy 100chf with 80 chf
+        ).to.be.revertedWith('buy must be >= 80 xCHF') //to small amount
+      });
+
+      it('buy failure > 400 chf', async () => {
+        await expect(
+          dbank.connect(alice).buy({value:chf401}) // buy 100chf with 80 chf
+        ).to.be.revertedWith('buy must be <= 400 xCHF') //to small amount
+      });
+
+    });
+
   })
 
 });
