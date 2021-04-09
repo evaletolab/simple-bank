@@ -13,7 +13,7 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 3. Pour chaque transaction de xTEL (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
 4. Des épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/)) das notre banque sur un compte épargne.
 5. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent dépend de la liquidité disponible moins la liquidité bloquée en dettes).
-6. Dans chaque compte épargne, un intérêt annuel de minimum 3% 🚀.
+6. Dans chaque compte épargne, un intérêt annuel de minimum 3%  est produit en xTEL🚀.
 7. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
 8. L'intérêt est annuel, mais son actualisation est à la seconde.
 9. Les paramêtres de la banque (vélocité, taux d'intérêt, dette, etc.) sont définis par le vote.
