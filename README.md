@@ -42,7 +42,7 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 * Les paramètres de la banque sont hardcodés (pas de vote)
 * La conversion ETH/CHF est fixée à 1:2000 (il faudrait intégrer un [oracle](https://data.chain.link/chf-usd) chf/usd/dai).
 * Les valeurs initiales (vélocité, taxe de 0.3% + 0.3chf et intérêt de 3%) sont arbitraires.
-* On ne devrait pas pouvoir "vendre" toute la liquidité (10% des deposit devraient être à disposition)
+* On ne devrait pas pouvoir réinjecter en épargne les xTEL 🧀 achetés par la dette.
 
 ## Diagramme
 ![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
