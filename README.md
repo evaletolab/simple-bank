@@ -6,16 +6,17 @@ Pour réaliser cette expérience, il faut résoudre les problèmes suivants: **(
 
 ## L'idée
 
-Voici une idée pour créer une banque sans licence qui mélange l'aide au commerce local et l'épargne avec un taux d'intérêt incitatif. Le principe est simple, lorsqu'un utilisateur achète des CHF numériques, il contracte automatiquement une dette de 20% du montant (Un montant de 100chf coute 80chf). En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. 
+Voici une idée pour créer une banque sans licence qui mélange l'aide au commerce local et l'épargne avec un taux d'intérêt incitatif. Le principe est simple, créer une banque de CHF numérique (xTEL) qui pourront être utilisés dans tous les commerces physiques ou numériques et dont la valeur est de 1:1. Pour avoir des CHF numérique (xTEL), on peut soit en recevoir soit en acheter. On peut en acheter dès qu'il y a assez de liquidité dans la banque, si c'est le cas, un montant de 100chf coute 80chf, se sont les dépots d'épargne qui financent cette dette de 20% du montant initial. Pour financer cette dette, d'autres utilisateurs sont invités a faire un dépot sur un compte épargne avec un taux d'intérêts incitatif d'au moins 3% par année. En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. 
 
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
-2. Pour chaque transaction (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
-3. Des investisseurs placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/))  à la banque sur un compte épargne.
-4. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent dépend de la liquidité disponible moins la liquidité bloquée en dettes).
-5. Dans chaque compte épargne, un intérêt annuel de minimum 3% 🚀.
-6. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
-7. L'intérêt est annuel, mais son actualisation est à la seconde.
-8. Les paramêtres de la banque (vélocité, taux d'intérêt, dette, etc.) sont définis par le vote.
+2. L'achat est disponible seulement si l'épargne cumulée est suffisante.
+3. Pour chaque transaction de xTEL (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
+4. Des épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/)) das notre banque sur un compte épargne.
+5. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent dépend de la liquidité disponible moins la liquidité bloquée en dettes).
+6. Dans chaque compte épargne, un intérêt annuel de minimum 3% 🚀.
+7. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
+8. L'intérêt est annuel, mais son actualisation est à la seconde.
+9. Les paramêtres de la banque (vélocité, taux d'intérêt, dette, etc.) sont définis par le vote.
 
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
