@@ -35,9 +35,12 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 
 ## Limitations
 * Ce projet est une expérience éducative.
-* Il manque toute les bonnes pratiques de sérurité et de programmation Solidity.
-* La conversion ETH/CHF est fictive (il manque l'utilisation d'un oracle chf/usd/dai https://data.chain.link/chf-usd).
+* Il manque les bonnes pratiques de sérurité 
+* Il manque les bonnes pratiques de programmation (migration, settings, ...).
+* Les paramètres de la banque sont hardcodés (pas de vote)
+* La conversion ETH/CHF est fixée à 1:2000 (il manque l'utilisation d'un oracle chf/usd/dai https://data.chain.link/chf-usd).
 * Les valeurs initiales (vélocité, taxe de 0.3% + 0.3chf et intérêt de 3%) sont arbitraires.
+* On ne devrait pas pouvoir "vendre" toute la liquidité (10% des deposit devraient être à disposition)
 
 ## Diagramme
 ![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
