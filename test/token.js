@@ -69,17 +69,17 @@ describe("Token", async function() {
         // expect(Number(await token.totalSupply()).toString()).to.eq(chf100.toString());  
       })
       
-      it('token balance of user', async () => {
+      it('token balance of user eq 100chf', async () => {
         let useramount = await token.balanceOf(user.address);
         expect(useramount.toString()).to.eq(chf100.toString());
       })
 
-      it('token balance of alice', async () => {
+      it('token balance of alice eq 0', async () => {
         let aliceamount = await token.balanceOf(alice.address);
         expect(aliceamount.toString()).to.eq('0');  
       })
 
-      it('token balance of bank', async () => {  
+      it('token balance of bank eq 0', async () => {  
         let dbankamount = await token.balanceOf(dbank.address);
         expect(dbankamount.toString()).to.eq('0');
       })
