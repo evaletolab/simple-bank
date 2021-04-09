@@ -28,7 +28,7 @@ describe("Token", async function() {
   })
 
 
-  describe('testing token contract', () => {
+  describe('token contract', () => {
     describe('token attributes', () => {
       it('checking token name', async () => {
         expect(await token.name()).to.be.eq('One Less Bank')
@@ -48,52 +48,68 @@ describe("Token", async function() {
     })
   })
 
-  describe('token transaction fees', () => {
-    it('checking token total supply', async () => {
-      const chf100 = 100n * 1000000000000000000n;      
-      await token.mint(user.address,chf100);
-      expect(Number(await token.totalSupply()).toString()).to.eq(chf100.toString());
-    })
+  describe('token transaction', () => {
+    const chf100 = 100n * 1000000000000000000n;    
+    const chf50 = 50n * 1000000000000000000n;    
+    const chffees = (chf50 * 3n) / 1000n;
 
-    it('checking token transfer', async () => {
-      const chf100 = 100n * 1000000000000000000n;    
-      const chf50 = 50n * 1000000000000000000n;    
-      const chffees = (chf50 * 3n) / 1000n;
-      const trasnferedAmount = chf50 - chffees;   
-
+    describe('transaction success (simple)',() => {
       //
       // mint initial token amount
-      token.mint(user.address,chf100);
-      const totalamount = (await token.totalSupply());
-      expect(totalamount.toString()).to.eq(chf100.toString());
+      beforeEach(async () => {
+        await token.mint(user.address,chf100);
+        //
+        // tranfer minter role 
+        await token.passMinterRole(dbank.address);
+      });
+    
+      it('checking token total supply after deposit', async () => {
+        const totalamount = (await token.totalSupply());
+        expect(totalamount.toString()).to.eq(chf100.toString());
+        // expect(Number(await token.totalSupply()).toString()).to.eq(chf100.toString());  
+      })
+      
+      it('token balance of user', async () => {
+        let useramount = await token.balanceOf(user.address);
+        expect(useramount.toString()).to.eq(chf100.toString());
+      })
 
-      //
-      // tranfer minter role 
-      await token.passMinterRole(dbank.address);
+      it('token balance of alice', async () => {
+        let aliceamount = await token.balanceOf(alice.address);
+        expect(aliceamount.toString()).to.eq('0');  
+      })
 
-      let useramount = await token.balanceOf(user.address);
-      expect(useramount.toString()).to.eq(chf100.toString());
+      it('token balance of bank', async () => {  
+        let dbankamount = await token.balanceOf(dbank.address);
+        expect(dbankamount.toString()).to.eq('0');
+      })
 
-      let aliceamount = await token.balanceOf(alice.address);
-      expect(aliceamount.toString()).to.eq('0');
+      describe('user transfer 50 chf to alice', async () => {
+        beforeEach(async () => {
+          //
+          // transfert 50 chf to alice
+          await token.connect(user).transfer(alice.address, chf50);
+        });
+  
+        it('token balance of user 100chf - 50chf', async () => {
+          let useramount = await token.balanceOf(user.address);
+          expect(useramount.toString()).to.eq((chf100-chf50).toString());
+        })
+  
+        it('token balance of alice is 50 chf (minus fees)', async () => {
+          let aliceamount = await token.balanceOf(alice.address);
+          const trasnferedAmount = chf50 - chffees;   
+          expect(aliceamount.toString()).to.eq(trasnferedAmount.toString());  
+        })
+  
+        it('token balance of bank equals fees (0.3% of 50 chf)', async () => {  
+          let dbankamount = await token.balanceOf(dbank.address);
+          expect(dbankamount.toString()).to.eq(chffees.toString());
+        })
+    
+      })
 
-      let dbankamount = await token.balanceOf(dbank.address);
-      expect(dbankamount.toString()).to.eq('0');
+    })
 
-      //
-      // transfert 50 chf to alice
-      await token.connect(user).transfer(alice.address, chf50);
-
-      //
-      // verify account user, alice and bank
-      useramount = await token.balanceOf(user.address);
-      expect(useramount.toString()).to.eq((chf100-chf50).toString());
-
-      aliceamount = await token.balanceOf(alice.address);
-      expect(aliceamount.toString()).to.eq(trasnferedAmount.toString());
-
-      dbankamount = await token.balanceOf(dbank.address);
-      expect(dbankamount.toString()).to.eq(chffees.toString());
-    });
   });
 });

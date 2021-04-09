@@ -130,7 +130,7 @@ contract dBank {
     uint interest = DEFAULT_YPA_S * (userBalance) * depositTime / 1e18;
 
     //emit event        
-    console.log("Interest:", userBalance, depositTime, interest);
+    // console.log("Interest:", userBalance, depositTime, interest);
     // emit is a payable function
     emit Interest(msg.sender, userBalance, depositTime, interest);    
 

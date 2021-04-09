@@ -93,11 +93,12 @@ describe("dBank.deposit", async function() {
         await dbank.connect(alice).buy({value:chf80}); // buy 100chf with 80 chf
       });
 
-      it('deposit totalLiquidity > 0', async () => {
+      it('deposit totalLiquidity eq 0.5 ETH', async () => {
         expect(Number(await dbank.totalLiquidity())).to.eq(Number(eth005));
       });
 
-      it('deposit totalLocked == 20 chf ( 20 / 2000 * 1e18 )', async () => {
+      // NOTE: eth:chf => (1:2000)
+      it('deposit totalLocked == 20 chf (in wei: 20 / 2000 * 1e18 )', async () => {
         expect(Number(await dbank.totalLocked())).to.eq(Number(chf20));
       });
     }); 
@@ -116,6 +117,12 @@ describe("dBank.deposit", async function() {
       });
 
       it('buy failure > 400 chf', async () => {
+        await expect(
+          dbank.connect(alice).buy({value:chf401}) // buy 100chf with 80 chf
+        ).to.be.revertedWith('buy must be <= 400 xCHF') //to small amount
+      });
+
+      xit('buy failure when totalLocked >= 90% Liquidity', async () => {
         await expect(
           dbank.connect(alice).buy({value:chf401}) // buy 100chf with 80 chf
         ).to.be.revertedWith('buy must be <= 400 xCHF') //to small amount
