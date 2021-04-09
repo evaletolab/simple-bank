@@ -27,7 +27,7 @@ contract dBank {
 
   //
   // debt laverage (buy 80 chf and get 100 chf ) (0.25 * 1e18)
-  uint256 private constant DEFAULT_LEVERAGE = 250000000000000000;
+  uint256 private constant DEFAULT_LEVERAGE = 4;
 
   //
   // wei / eth unit converter
@@ -65,12 +65,21 @@ contract dBank {
     // convert amount
     uint weiAmount = (msg.value);
     uint chfAmount = (msg.value * DEFAULT_ETH_CHF);
+    // console.log('buy -- chf  ',chfAmount);
+    // console.log('buy -- wei  ',weiAmount);
+    // console.log('buy -- limit',(80 * 1e18));
+    // console.log('buy -- limit',(5 * 80 * 1e18));
+
     require(chfAmount >= (80 * 1e18), "Error, buy must be >= 80 xCHF!");
     require(chfAmount <= (5 * 80 * 1e18), "Error, buy must be <= 400 xCHF!");
 
     //
     // check if there is available liquidity
-    uint debtAmount = weiAmount * DEFAULT_LEVERAGE;
+    uint debtAmount = weiAmount / DEFAULT_LEVERAGE;
+    // console.log('buy -- lquidity',totalLiquidity);
+    // console.log('buy -- locked  ',totalLocked);
+    // console.log('buy -- debt    ',debtAmount);
+
     require((totalLiquidity - totalLocked) >= debtAmount , "Error, not enough liquidity!");
 
     //

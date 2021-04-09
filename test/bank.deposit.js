@@ -33,11 +33,9 @@ describe("dBank.deposit", async function() {
     })
   });
 
-  describe('deposit success', () => {
+  describe('deposit', () => {
     const eth005 = BigInt(0.05 * 1e18);
-    let balance
-
-    describe('success', async () => {
+    describe('deposit success', async () => {
       beforeEach(async () => {
         // deposit 100 chf (0.05 ether)
         await dbank.connect(user).deposit({value:eth005}) //0.5 ETH
@@ -61,13 +59,47 @@ describe("dBank.deposit", async function() {
       //   ).to.eq([BigNumber.from(10**15), BigNumber.from(1), BigNumber.from(31668017)])
       //  })
  
-      it('interest after one second should > 0', async ()=>{
+      it('deposit get interest should > 0', async ()=>{
 
-       await expect(dbank.connect(user).interestStatus())
+        // FIXME verify output 47446171 
+        await expect(dbank.connect(user).interestStatus())
                   .to.emit(dbank, 'Interest')
-                  .withArgs(user.address, eth005, 1, 47446171);        
+                  .withArgs(user.address, eth005, 1, 47446171);
                   // .withArgs(user.address, eth005, 1, 948923436);        
-                })
+      });
+
+      it('deposit totalLiquidity > 0', async () => {
+        expect(Number(await dbank.totalLiquidity())).to.eq(Number(eth005));
+      })
+
+      it('deposit totalLocked == 0', async () => {
+        expect(Number(await dbank.totalLocked())).to.eq(0);
+      })
+
+    })    
+  })
+
+  describe('buy', () => {
+    const eth005 = BigInt(0.05 * 1e18);
+    const chf80 =  BigInt(80 * 1e18 / 2000);
+    const chf20 =  BigInt(20 * 1e18 / 2000);
+
+
+    describe('buy success', async () => {
+      beforeEach(async () => {
+        // deposit 100 chf (0.05 ether)
+        await dbank.connect(user).deposit({value:eth005}) //0.5 ETH
+        await dbank.connect(alice).buy({value:chf80}); // buy 100chf with 80 chf
+      })
+
+      it('deposit totalLiquidity > 0', async () => {
+        expect(Number(await dbank.totalLiquidity())).to.eq(Number(eth005));
+      })
+
+      it('deposit totalLocked == 20 chf ( 20 / 2000 * 1e18 )', async () => {
+        expect(Number(await dbank.totalLocked())).to.eq(Number(chf20));
+      })
+
     })    
   })
 

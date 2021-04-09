@@ -1,10 +1,10 @@
-// const { expect } = require("chai");
-// const EVM_REVERT = 'VM Exception while processing transaction: revert';
+const { expect } = require("chai");
+const EVM_REVERT = 'VM Exception while processing transaction: revert';
 
-// const wait = s => {  
-//   const milliseconds = s * 1000;
-//   return new Promise(resolve => setTimeout(resolve, milliseconds));
-// }
+const wait = s => {  
+  const milliseconds = s * 1000;
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
 
 
 // describe("Token", async function() {

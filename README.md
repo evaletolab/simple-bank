@@ -34,8 +34,8 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 > `f(tx) = 100 *(1 - 0.3%)^tx - tx*0.03` 
 
 ## Limitations
-* Ce projet est une expérience technologique et éducative.
-* La sérurité est pas intégrée.
+* Ce projet est une expérience éducative.
+* Il manque toute les bonnes pratiques de sérurité et de programmation Solidity.
 * La conversion ETH/CHF est fictive (il manque l'utilisation d'un oracle chf/usd/dai https://data.chain.link/chf-usd).
 * Les valeurs initiales (vélocité, taxe de 0.3% + 0.3chf et intérêt de 3%) sont arbitraires.
 
