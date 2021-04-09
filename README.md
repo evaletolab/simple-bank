@@ -17,6 +17,7 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 7. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
 8. L'intérêt est annuel, mais son actualisation est à la seconde.
 9. Les paramêtres de la banque (vélocité, taux d'intérêt, dette, etc.) sont définis par le vote.
+10. Les épargnants peuvent décider de modifier les paramêtres de fonctionnement de la banque.
 
 ### Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
