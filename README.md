@@ -3,6 +3,9 @@
 ![image](https://user-images.githubusercontent.com/1422935/113506347-a5fbf600-9544-11eb-820e-c737e81c6695.png)
 
 # Créer une banque et un shitcoin 🧀 xCH<sub>eese</sub>
+[![Build Status](https://travis-ci.com/evaletolab/simple-bank.svg?branch=master)](https://travis-ci.com/evaletolab/simple-bank)
+
+
 
 Pour réaliser cette expérience, il faut résoudre les problèmes suivants: **(1)sans régulation bancaire**, **(2) un jeux à [somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
 
