@@ -4,7 +4,7 @@
   "description": "Comment créer sa banque en 2021",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx hardhat test"
   },
   "author": "Olivier Evalet <evaleto@gmail.com> (http://evaletolab.ch/)",
   "license": "GPL3",
