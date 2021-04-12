@@ -1,16 +1,18 @@
+❤😈🎵
+
 ![image](https://user-images.githubusercontent.com/1422935/113506347-a5fbf600-9544-11eb-820e-c737e81c6695.png)
 
-# Créer une banque, une expérience économique
+# Créer une banque et un shitcoin 🧀 xCH
 
 Pour réaliser cette expérience, il faut résoudre les problèmes suivants: **(1)sans régulation bancaire**, **(2) un jeux à [somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
 
 ## L'idée
 
-Voici une idée pour créer une banque sans licence qui mélange l'aide au commerce local et l'épargne avec un taux d'intérêt incitatif. Le principe est simple, créer une banque de CHF numériques (xTEL 🧀) qui pourront être utilisés dans tous les commerces physiques ou numériques et dont la valeur est de 1:1 avec le CHF. Pour avoir des CHF numériques (xTEL 🧀), on peut soit en recevoir soit en acheter. Cependant, on peut en acheter seulement s'il y a assez de liquidité dans la banque. Si c'est le cas, un montant de 100chf coute seulement 80chf. Ce sont les dépots d'épargne qui financent cette dette de 20% du montant initial. Pour financer cette dette, d'autres utilisateurs sont invités a faire un dépot sur un compte épargne avec un taux d'intérêts incitatif d'au moins 3% par année. En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. 
+Voici une idée pour créer une banque sans licence qui mélange l'aide au commerce local et l'épargne avec un taux d'intérêt incitatif. Le principe est simple, créer une banque de CHF numériques (xCH 🧀) qui pourront être utilisés dans tous les commerces physiques ou numériques et dont la valeur est de 1:1 avec le CHF. Pour avoir des CHF numériques (xCH 🧀), on peut soit en recevoir soit en acheter. Cependant, on peut en acheter seulement s'il y a assez de liquidité dans la banque. Si c'est le cas, un montant de 100chf coute seulement 80chf. Ce sont les dépots d'épargne qui financent cette dette de 20% du montant initial. Pour financer cette dette, d'autres utilisateurs sont invités a faire un dépot sur un compte épargne avec un taux d'intérêts incitatif d'au moins 3% par année. En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. 
 
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
 2. L'achat est disponible seulement si l'épargne cumulée est suffisante.
-3. Pour chaque transaction de xTEL (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
+3. Pour chaque transaction de xCH (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
 4. Des épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/)) das notre banque sur un compte épargne.
 5. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent dépend de la liquidité disponible moins la liquidité bloquée en dettes).
 6. Dans chaque compte épargne, un intérêt annuel de minimum 3%  est produit en xTEL🚀.
