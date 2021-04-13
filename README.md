@@ -52,7 +52,7 @@ Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si c'est le
 * Les paramètres de la banque sont hardcodés (pas de vote) [TODO]
 * La conversion ETH/CHF est fixée à 1:2000 (il faudrait intégrer un [oracle](https://data.chain.link/chf-usd) chf/usd/dai) [TODO].
 * Les valeurs initiales (vélocité, taxe de 0.3% + 0.3chf et intérêt de 3%) sont arbitraires [TODO].
-* On ne doit pas pouvoir réinjecter en épargne les xTEL 🧀 achetés par la dette.
+* On ne doit pas pouvoir réinjecter en épargne les xCH 🧀 achetés par la dette.
 
 
 
