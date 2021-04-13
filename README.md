@@ -23,8 +23,8 @@ Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si c'est le
 # En résumer
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit participe de 80 CHF.
 2. L'achat est disponible seulement si l'épargne cumulée est suffisante.
-3. Pour chaque transaction de xCH (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
-4. Des épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/)) das notre banque sur un compte épargne.
+3. Pour chaque transaction de xCH (dans un commerce Suisse) une taxe de 0.3% plus 3 centimes est prélevée. 
+4. Des épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/), ou autres équivalants) das notre banque sur un compte épargne.
 5. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent dépend de la liquidité disponible moins la liquidité bloquée en dettes).
 6. Dans chaque compte épargne, un intérêt annuel de minimum 3%  est produit en xCH 🧀.
 7. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
