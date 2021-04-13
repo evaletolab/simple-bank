@@ -46,7 +46,7 @@ Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si c'est le
 > `f(tx) = 100 *(1 - 0.3%)^tx - tx*0.03` 
 
 ## Limitations
-* Ce projet est une expérience numérique & éducative.
+* Ce projet est une expérience ludique & éducative.
 * Il manque **toutes** les bonnes pratiques de sérurité 
 * Il manque **toutes** les bonnes pratiques de programmation (migration, settings, ...) [TODO].
 * Les paramètres de la banque sont hardcodés (pas de vote) [TODO]
