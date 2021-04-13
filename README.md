@@ -14,11 +14,12 @@ Pour avoir des CHF numériques (xCH🧀) on peut soit en recevoir soit en achete
 Pour produire des xCH🧀 il faut s'assurer qu'un montant équivant est déposé en CHF (ou équivalant). Pour cette raison, nous avons créé un compte d’épargne avec un taux d'intérêt incitatif d'au moins 3% par année. Le but ici est de fournir une source de subvention pour la création des xCH🧀
 
 * Les utilisateurs sont invités à faire un dépôt épargne avec un taux d'intérêts incitatifs d'au moins 3% par année (payée en xCH🧀).
-* Pour chaque achat de 100 xCH🧀 numérique, une dette 20 CHF est contractée sur les comptes épargnes.
-* En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne.
 
 ## L’achat de xCH🧀
 Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si ce n'est pas le cas, l'achat est indisponible. Si c'est le cas, un montant de 100 xCH coûte seulement 80 chf pour le consommateur. Ce sont les dépôts d'épargne qui financent la dette de 20 chf. En contrepartie, pour chaque mouvement de xCH🧀 , une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. Ce qui permet de satisfaire la règle du «jeu à somme nulle» de l’énoncé. Dans la réalité, la liquidité de xCH🧀 ne peut pas être utilisée pour produire de nouveaux xCHF🧀.
+
+* Pour chaque achat de 100 xCH🧀 numérique, une dette 20 CHF est contractée sur les comptes épargnes.
+* En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne.
 
 # En résumer
 1. Pour un versement de 80 chf, l'utilisateur obtient 100 xCH🧀.
