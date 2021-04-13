@@ -7,13 +7,13 @@ Pour réaliser cette expérience, il faut suivre les contraintes suivantes: **(1
 
 ## L'idée
 Voici une idée de projet pour motiver la consommation locale avec l’aide d’une subvention 100 % financée.
-Le principe en quelques mots. Il s’agit de créer une banque qui peut émettre des xCH🧀 dont la valeur est de 1:1 avec le CHF. Ces xCH🧀 pourront être utilisés dans tous les commerces physiques ou numériques de Suisse sans discrimination (à la seule condition qu’il faut un smartphone pour les utiliser). L’émission de xCH🧀 est toujours égale à la quantité de CHF disponibles dans la banque de sorte que 1 xCHF🧀 égale bien 1 CHF.
+Le principe en quelques mots. Il s’agit de créer une banque qui peut émettre des xCH🧀 dont la valeur est de 1:1 avec le CHF. Ces xCH🧀 pourront être utilisés dans tous les commerces physiques ou numériques de Suisse sans discrimination (à la seule condition qu’il faut un smartphone pour les utiliser). L’émission de xCH🧀 est toujours égale à la quantité de CHF disponibles dans la banque de sorte que 1 xCH🧀 égale bien 1 CHF.
 Pour avoir des CHF numériques (xCH🧀) on peut soit en recevoir soit en acheter. L’option d’achat est disponible à la condition suivante.
 
 ## Le compte épargne
-Pour produire des xCHF🧀 il faut s'assurer qu'un montant équivant est déposé en CHF (ou équivalant). Pour cette raison, nous avons créé un compte d’épargne avec un taux d'intérêt incitatif d'au moins 3% par année. Le but ici est de fournir une source de subvention pour la création des xCH🧀
+Pour produire des xCH🧀 il faut s'assurer qu'un montant équivant est déposé en CHF (ou équivalant). Pour cette raison, nous avons créé un compte d’épargne avec un taux d'intérêt incitatif d'au moins 3% par année. Le but ici est de fournir une source de subvention pour la création des xCH🧀
 
-* Les utilisateurs sont invités à faire un dépôt épargne avec un taux d'intérêts incitatifs d'au moins 3% par année (payée en xCH ).
+* Les utilisateurs sont invités à faire un dépôt épargne avec un taux d'intérêts incitatifs d'au moins 3% par année (payée en xCH🧀).
 * Pour chaque achat de 100 xCH🧀 numérique, une dette 20 CHF est contractée sur les comptes épargnes.
 * En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne.
 
