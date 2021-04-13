@@ -18,7 +18,7 @@ Pour produire des xCH🧀 il faut s'assurer qu'un montant équivant est déposé
 * En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne.
 
 ## L’achat de xCH🧀
-Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si c'est le cas, un montant de 100 xCH coûte seulement 80 chf pour le consommateur. Ce sont les dépôts d'épargne qui financent la dette de 20 chf. En contrepartie, pour chaque mouvement de xCH🧀 , une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. Ce qui permet de satisfaire la règle du «jeu à somme nulle» de l’énoncé. Dans la réalité, la liquidité de xCH🧀 ne peut pas être utilisée pour produire de nouveaux xCHF🧀.
+Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si ce n'est pas le cas, l'achat est indisponible. Si c'est le cas, un montant de 100 xCH coûte seulement 80 chf pour le consommateur. Ce sont les dépôts d'épargne qui financent la dette de 20 chf. En contrepartie, pour chaque mouvement de xCH🧀 , une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. Ce qui permet de satisfaire la règle du «jeu à somme nulle» de l’énoncé. Dans la réalité, la liquidité de xCH🧀 ne peut pas être utilisée pour produire de nouveaux xCHF🧀.
 
 # En résumer
 1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit participe de 80 CHF.
