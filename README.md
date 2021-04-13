@@ -60,7 +60,8 @@ Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si c'est le
 
 ## Math
 L'équilibre entre la dette, les retraits et le capital disponible, s'inspire de cette fonction
-![image](https://user-images.githubusercontent.com/1422935/114516537-c9f2c200-9c3d-11eb-91b9-e57ff2abb96a.png)
+![image](https://user-images.githubusercontent.com/1422935/114516537-c9f2c200-9c3d-11eb-91b9-e57ff2abb96a.png )
+* https://blockgeeks.com/guides/makerdao-stablecoin-blockgeeks-part-2/
 
 
 
