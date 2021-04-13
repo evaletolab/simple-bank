@@ -1,6 +1,6 @@
 ❤😈🎵
 
-# Un exercice pour créer une banque et un shitcoin, le 🧀 xCH<sub>eese</sub>
+# Un exercice pour créer une banque et<br/>un shitcoin, le 🧀 xCH<sub>eese</sub>
 [![Build Status](https://travis-ci.com/evaletolab/simple-bank.svg?branch=master)](https://travis-ci.com/evaletolab/simple-bank)
 
 Pour réaliser cette expérience, il faut suivre les contraintes suivantes: **(1)sans régulation bancaire**, **(2) un jeux à [somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
