@@ -9,7 +9,7 @@ Pour réaliser cette expérience, il faut suivre les contraintes suivantes: **(1
 
 ## L'idée
 Voici une idée de projet pour motiver la consommation locale avec l’aide d’une subvention 100 % financée.
-Le principe en quelques mots. Il s’agit de créer une banque qui peut émettre des xCH🧀 dont la valeur est de 1:1 avec le CHF. Ces xCH🧀 pourront être utilisés dans tous les commerces physiques ou numériques de Suisse sans discrimination à l’exception qu’il faut un smartphone pour les utiliser. L’émission de xCH🧀 est toujours égale à la quantité de CHF disponibles dans la banque de sorte que 1 xCHF🧀 égale bien 1 CHF.
+Le principe en quelques mots. Il s’agit de créer une banque qui peut émettre des xCH🧀 dont la valeur est de 1:1 avec le CHF. Ces xCH🧀 pourront être utilisés dans tous les commerces physiques ou numériques de Suisse sans discrimination (à la seule condition qu’il faut un smartphone pour les utiliser). L’émission de xCH🧀 est toujours égale à la quantité de CHF disponibles dans la banque de sorte que 1 xCHF🧀 égale bien 1 CHF.
 Pour avoir des CHF numériques (xCH🧀) on peut soit en recevoir soit en acheter. L’option d’achat est disponible à la condition suivante.
 
 ## Le compte épargne
