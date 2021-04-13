@@ -13,7 +13,7 @@ Le principe en quelques mots. Il s’agit de créer une banque qui peut émettre
 Pour avoir des CHF numériques (xCH🧀) on peut soit en recevoir soit en acheter. L’option d’achat est disponible à la condition suivante.
 
 ## Le compte épargne
-Pour produire des xCHF🧀 il faut s'assurer qu'un montant équivant est déposé en CHF. Pour cette raison, nous avons créé un compte d’épargne avec un taux d'intérêt incitatif d'au moins 3% par année. Le but ici est de fournir une source de subvention pour la création des xCH🧀
+Pour produire des xCHF🧀 il faut s'assurer qu'un montant équivant est déposé en CHF (ou équivalant). Pour cette raison, nous avons créé un compte d’épargne avec un taux d'intérêt incitatif d'au moins 3% par année. Le but ici est de fournir une source de subvention pour la création des xCH🧀
 
 * Les utilisateurs sont invités à faire un dépôt épargne avec un taux d'intérêts incitatifs d'au moins 3% par année (payée en xCH ).
 * Pour chaque achat de 100 xCH🧀 numérique, une dette 20 CHF est contractée sur les comptes épargnes.
