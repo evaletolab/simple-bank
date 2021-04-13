@@ -5,15 +5,25 @@
 # Créer une banque et un shitcoin 🧀 xCH<sub>eese</sub>
 [![Build Status](https://travis-ci.com/evaletolab/simple-bank.svg?branch=master)](https://travis-ci.com/evaletolab/simple-bank)
 
-
-
-Pour réaliser cette expérience, il faut résoudre les problèmes suivants: **(1)sans régulation bancaire**, **(2) un jeux à [somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
+Pour réaliser cette expérience, il faut suivre les contraintes suivantes: **(1)sans régulation bancaire**, **(2) un jeux à [somme nulle](https://fr.wikipedia.org/wiki/Jeu_%C3%A0_somme_nulle)**, **(3)incitation financière évidente**, **(4) anonyme**, **(5) 100% auditable**
 
 ## L'idée
+Voici une idée de projet, qui normalement devrait être soumis à la régulation financière, pour motiver le commerce local avec l’aide d’une subvention 100 % privée.
+Le principe en quelques mots. Il s’agit de créer une banque qui peut émettre des CHF numériques (xCH🧀) dont la valeur est de 1:1 avec le CHF. Ces xCH🧀 pourront être utilisés dans tous les commerces physiques ou numériques Helvetique sans discrimination à l’exception qu’il faut un smartphone pour les utiliser. L’émission de xCH🧀 est toujours égale à la quantité de CHF disponibles dans la banque de sorte que 1 xCHF🧀 égale bien 1 CHF.
+Pour avoir des CHF numériques (xCH🧀) on peut soit en recevoir soit en acheter. L’option d’achat est disponible à la condition suivante.
 
-Voici une idée pour créer une banque sans licence qui mélange l'aide au commerce local et l'épargne avec un taux d'intérêt incitatif. Le principe est simple, créer une banque de CHF numériques (xCH 🧀) qui pourront être utilisés dans tous les commerces physiques ou numériques et dont la valeur est de 1:1 avec le CHF. Pour avoir des CHF numériques (xCH 🧀), on peut soit en recevoir soit en acheter. Cependant, on peut en acheter seulement s'il y a assez de liquidité dans la banque. Si c'est le cas, un montant de 100chf coute seulement 80chf. Ce sont les dépots d'épargne qui financent cette dette de 20% du montant initial. Pour financer cette dette, d'autres utilisateurs sont invités a faire un dépot sur un compte épargne avec un taux d'intérêts incitatif d'au moins 3% par année. En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. 
+## Le compte épargne
+Pour produire des xCHF🧀 il faut assurer la même valeur sur la base du CHF. Pour cette raison, nous avons créé un compte d’épargne avec un taux d'intérêt incitatif d'au moins 3% par année. Le but ici est de fournir une source de subvention pour la création des xCH🧀
 
-1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit payer 80 CHF.
+* Les utilisateurs sont invités à faire un dépôt épargne avec un taux d'intérêts incitatifs d'au moins 3% par année (payée en xCH ).
+* Pour chaque achat de 100 xCH🧀 numérique, une dette 20 CHF est contractée sur les comptes épargnes.
+* En contrepartie, pour chaque transaction, une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne.
+
+## L’achat de xCH🧀
+Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si c'est le cas, un montant de 100 xCH coûte seulement 80 chf pour le consommateur. Ce sont les dépôts d'épargne qui financent la dette de 20 chf. En contrepartie, pour chaque mouvement de xCH🧀 , une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. Ce qui permet de satisfaire la règle du «jeu à somme nulle» de l’énoncé. Dans la réalité, la liquidité de xCH🧀 ne peut pas être utilisée pour produire de nouveaux xCHF🧀.
+
+# En résumer
+1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit participe de 80 CHF.
 2. L'achat est disponible seulement si l'épargne cumulée est suffisante.
 3. Pour chaque transaction de xCH (dans un commerce local) une taxe de 0.3% plus 3 centimes est prélevée. 
 4. Des épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/)) das notre banque sur un compte épargne.
@@ -24,7 +34,7 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 9. Les paramêtres de la banque (vélocité, taux d'intérêt, dette, etc.) sont définis par le vote.
 10. Les épargnants peuvent de modifier par le vote les paramêtres techniques de la banque.
 
-### Exemple,
+## Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
 2. Cycle de vie d'une unité de 100 chf, 
    1. il faut ~550 mouvements de 100 chf pour être consommé complètement (<1 chf) par les 0.3% + 3 centimes.
@@ -33,24 +43,25 @@ Voici une idée pour créer une banque sans licence qui mélange l'aide au comme
 3. La durée de vie d'une unité de 100 chf, c'est le nombre de [transactions nécessaires](https://www.wolframalpha.com/input/?i=solve+1+%3D+100+*%281+-+0.3%25%29%5Ex+-+x*0.03) pour produire un minimum de 3% d'intérêt sur 12 mois (~87).
 4. On peut **déterminer un taux d'intérêt** sur le compte épargne **en fonction** de la vélocité de l'argent (calculée sur 12 mois). Il faut un volume de liquidité minimum pour garantir une vélocité relativement stable.
 
-
-![image](https://user-images.githubusercontent.com/1422935/113487142-96ce6700-94b6-11eb-8888-e97d6ee217b1.png)
-
-> Note: formule utilisée pour le calcul de vie d'une unité de 100 chf
+> Note: cycle de vie d'une unité de 100 chf
 > 
 > `f(tx) = 100 *(1 - 0.3%)^tx - tx*0.03` 
 
 ## Limitations
-* Ce projet est une expérience éducative.
-* Il manque les bonnes pratiques de sérurité 
-* Il manque les bonnes pratiques de programmation (migration, settings, ...).
-* Les paramètres de la banque sont hardcodés (pas de vote)
-* La conversion ETH/CHF est fixée à 1:2000 (il faudrait intégrer un [oracle](https://data.chain.link/chf-usd) chf/usd/dai).
-* Les valeurs initiales (vélocité, taxe de 0.3% + 0.3chf et intérêt de 3%) sont arbitraires.
-* On ne devrait pas pouvoir réinjecter en épargne les xTEL 🧀 achetés par la dette.
+* Ce projet est une expérience numérique & éducative.
+* Il manque **toutes** les bonnes pratiques de sérurité 
+* Il manque **toutes** les bonnes pratiques de programmation (migration, settings, ...) [TODO].
+* Les paramètres de la banque sont hardcodés (pas de vote) [TODO]
+* La conversion ETH/CHF est fixée à 1:2000 (il faudrait intégrer un [oracle](https://data.chain.link/chf-usd) chf/usd/dai) [TODO].
+* Les valeurs initiales (vélocité, taxe de 0.3% + 0.3chf et intérêt de 3%) sont arbitraires [TODO].
+* On ne doit pas pouvoir réinjecter en épargne les xTEL 🧀 achetés par la dette.
 
-## Diagramme
-![image](https://user-images.githubusercontent.com/1422935/113479644-8e633580-9490-11eb-83db-07215c0ef85f.png)
+
+
+## Math
+L'équilibre entre la dette, les retraits et le capital disponible, s'inspire de cette fonction
+![image](https://user-images.githubusercontent.com/1422935/114516537-c9f2c200-9c3d-11eb-91b9-e57ff2abb96a.png)
+
 
 
 # Prepare the project
