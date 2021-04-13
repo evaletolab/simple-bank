@@ -1,7 +1,5 @@
 ❤😈🎵
 
-## ONE_LESS_BANK
-
 # Créer une banque et un shitcoin 🧀 xCH<sub>eese</sub>
 [![Build Status](https://travis-ci.com/evaletolab/simple-bank.svg?branch=master)](https://travis-ci.com/evaletolab/simple-bank)
 
