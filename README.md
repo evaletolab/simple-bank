@@ -21,16 +21,16 @@ Pour produire des xCH🧀 il faut s'assurer qu'un montant équivant est déposé
 Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si ce n'est pas le cas, l'achat est indisponible. Si c'est le cas, un montant de 100 xCH coûte seulement 80 chf pour le consommateur. Ce sont les dépôts d'épargne qui financent la dette de 20 chf. En contrepartie, pour chaque mouvement de xCH🧀 , une taxe de 0.3% est automatiquement prélevée et distribuée à la banque à destination des comptes d'épargne. Ce qui permet de satisfaire la règle du «jeu à somme nulle» de l’énoncé. Dans la réalité, la liquidité de xCH🧀 ne peut pas être utilisée pour produire de nouveaux xCHF🧀.
 
 # En résumer
-1. Pour chaque achat de 100 CHF numérique, l'utilisateur doit participe de 80 CHF.
-2. L'achat est disponible seulement si l'épargne cumulée est suffisante.
+1. Pour un versement de 80 chf, l'utilisateur obtient 100 xCH🧀.
+2. L'achat de xCH🧀 est uniquement possible si l'épargne cumulée est suffisante.
 3. Pour chaque transaction de xCH (dans un commerce Suisse) une taxe de 0.3% plus 3 centimes est prélevée. 
-4. Des épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/), ou autres équivalants) das notre banque sur un compte épargne.
+4. Les épargnants placent de l'argent ([ETH](https://coinmarketcap.com/fr/currencies/ethereum/), ou autres équivalants) dans la banque sur un compte épargne.
 5. Cet argent est bloqué pour au minimum N mois (le retrait de l'argent dépend de la liquidité disponible moins la liquidité bloquée en dettes).
-6. Dans chaque compte épargne, un intérêt annuel de minimum 3%  est produit en xCH 🧀.
-7. La valeur précise du % est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
+6. Chaque compte épargne bénéficie d'un intérêt annuel de minimum 3% produit en xCH 🧀.
+7. La valeur précise de l'intérêt est un calcul sur le montant total collecté par la somme des transactions dans une période de temps fixe.
 8. L'intérêt est annuel, mais son actualisation est à la seconde.
 9. Les paramêtres de la banque (vélocité, taux d'intérêt, dette, etc.) sont définis par le vote.
-10. Les épargnants peuvent de modifier par le vote les paramêtres techniques de la banque.
+10. Les épargnants peuvent modifier par le vote les paramêtres techniques de la banque.
 
 ## Exemple,
 1. Pour 100'000 CHF d'épargne, on peut offrir 500'000 chf de crédit
@@ -47,7 +47,7 @@ Pour acheter des xCH🧀 il faut assez de liquidité dans la banque. Si ce n'est
 
 ## Limitations
 * Ce projet est une expérience ludique & éducative.
-* Il manque **toutes** les bonnes pratiques de sérurité 
+* Il manque **toutes** les bonnes pratiques de sécurité 
 * Il manque **toutes** les bonnes pratiques de programmation (migration, settings, ...) [TODO].
 * Les paramètres de la banque sont hardcodés (pas de vote) [TODO]
 * La conversion ETH/CHF est fixée à 1:2000 (il faudrait intégrer un [oracle](https://data.chain.link/chf-usd) chf/usd/dai) [TODO].
